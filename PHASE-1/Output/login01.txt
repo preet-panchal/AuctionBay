@@ -1,0 +1,19 @@
+Welcome to AuctionBay!
+
+Enter username:
+
+Hello admin01, 
+User type: Admin (AA)
+
+Here is a list of operations:
+- Create
+- Delete
+- Advertise
+- Bid
+- Refund
+- Add Credit
+- List All Items
+- Logout
+
+Enter operation:
+Logged out successfully. 
