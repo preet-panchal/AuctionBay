@@ -1,5 +1,6 @@
 Welcome to AuctionBay!
 
+Enter login' to login: 
 Enter username:
 
 Hello admin01, 
@@ -16,4 +17,4 @@ Here is a list of operations:
 - Logout
 
 Enter operation:
-Logged out successfully. 
+Logged out successfully.

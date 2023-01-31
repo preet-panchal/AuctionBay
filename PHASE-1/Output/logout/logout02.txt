@@ -1,0 +1,5 @@
+Welcome to AuctionBay!
+
+Enter 'login' to login: 
+
+Error: Please enter 'login' to login to AuctionBay.

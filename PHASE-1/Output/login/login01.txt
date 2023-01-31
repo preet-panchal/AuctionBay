@@ -1,0 +1,42 @@
+Welcome to AuctionBay!
+
+Enter 'login' to login: 
+Enter username:
+
+Hello admin01, 
+User type: Admin (AA)
+
+Here is a list of operations:
+- Create
+- Delete
+- Advertise
+- Bid
+- Refund
+- Add Credit
+- List All Items
+- Logout
+
+Enter operation:
+Logged out successfully.
+
+
+-----------------------------
+Welcome to AuctionBay!
+
+Enter operation: login ******
+Enter username: 
+Hello user01 (AA)!
+
+Enter operation: bid  ******
+Current highest bid: $500
+Enter new bid: 501 *******
+New bid of $501 confirmed.
+
+Enter operation: logout ******
+successfully logged out. 
+Enter operation: logout ******
+Error: You must login first. 
+
+Enter operation: exit
+Exited AuctionBay system. 
+---- console terminated ------
