@@ -6,15 +6,16 @@ Enter username:
 Hello admin01, 
 User type: Admin (AA)
 
-Here is a list of operations:
-- Create
-- Delete
-- Advertise
-- Bid
-- Refund
-- Add Credit
-- List All Items
-- Logout
+Here is a list of operations (what to input):
+- Login (login)
+- Create (create)
+- Delete (delete)
+- Advertise (advertise)
+- Bid (bid)
+- Refund (refund)
+- Add Credit (addcredit)
+- List All Items (listall)
+- Logout (logout)
 
 Enter operation:
 Logged out successfully.
@@ -22,6 +23,17 @@ Logged out successfully.
 
 -----------------------------
 Welcome to AuctionBay!
+--
+Here is a list of operations (what to input):
+- Login (login)
+- Create (create)
+- Delete (delete)
+- Advertise (advertise)
+- Bid (bid)
+- Refund (refund)
+- Add Credit (addcredit)
+- List All Items (listall)
+- Logout (logout)
 
 Enter operation: login ******
 Enter username: 
