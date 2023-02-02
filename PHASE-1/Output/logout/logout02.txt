@@ -1,5 +1,26 @@
 Welcome to AuctionBay!
+--
+Here is a list of operations (what to input):
+- Login (login)
+- Create (create)
+- Delete (delete)
+- Advertise (advertise)
+- Bid (bid)
+- Refund (refund)
+- Add Credit (addcredit)
+- List All Items (listall)
+- Logout (logout)
 
-Enter 'login' to login: 
+Enter operation: login ******
+Enter username: 
+Hello user01 (AA)!
 
-Error: Please enter 'login' to login to AuctionBay.
+Enter operation: bid  ******
+Current highest bid: $500
+Enter new bid: 501 *******
+New bid of $501 confirmed.
+
+Enter operation: logout ******
+Successfully logged out. 
+Enter operation: logout ******
+Error: You must login first. 
