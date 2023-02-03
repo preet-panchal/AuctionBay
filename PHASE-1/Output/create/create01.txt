@@ -1,2 +1,22 @@
-login
-admin01 
+Welcome to AuctionBay!
+--
+Here is a list of operations (what to input):
+- Login (login)
+- Create (create)
+- Delete (delete)
+- Advertise (advertise)
+- Bid (bid)
+- Refund (refund)
+- Add Credit (addcredit)
+- List All Items (listall)
+- Logout (logout)
+
+Enter operation:
+Enter username:
+Hello fsuser01 (FS)!
+
+Enter operation:
+Error: Only admin has privilages for this operation.
+
+Enter operation:
+fsuser01 successfully logged out.

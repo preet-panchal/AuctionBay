@@ -1,0 +1,8 @@
+login
+admin01
+create
+randomuser123456
+newuser01
+AA
+10
+logout

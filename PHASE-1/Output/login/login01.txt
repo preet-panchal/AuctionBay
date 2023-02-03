@@ -13,3 +13,10 @@ Here is a list of operations (what to input):
 
 Enter operation:
 Error: You must login first. 
+
+Enter operation:
+Enter username:
+Hello admin01 (AA)!
+
+Enter operation:
+admin01 successfully logged out.

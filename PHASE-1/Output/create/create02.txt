@@ -12,8 +12,17 @@ Here is a list of operations (what to input):
 - Logout (logout)
 
 Enter operation:
-Enter username:
+Enter username: 
 Hello admin01 (AA)!
+
+Enter operation:
+Enter username to create:
+Error: Username must be only 15 characters in length. 
+Please try again.
+Enter username to create:
+Enter user type:
+Enter initial credit:
+newuser01 (AA) with credit $10.00 successfully created. 
 
 Enter operation:
 admin01 successfully logged out.

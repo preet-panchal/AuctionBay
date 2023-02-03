@@ -1,0 +1,8 @@
+login
+admin01
+create
+newuser02
+AB
+FS
+10
+logout

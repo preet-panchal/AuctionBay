@@ -1,0 +1,8 @@
+login
+admin01
+create
+newuser05
+AA
+-1
+10
+logout
