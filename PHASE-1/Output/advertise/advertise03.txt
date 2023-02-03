@@ -18,7 +18,7 @@ Hello admin01 (AA)!:
 Enter operation:
 Enter the Item Name:
 Enter the minimum bid in [$]:
-Error: Minimum bid bust be entered as a number.
+Error: Minimum bid must be entered as a number.
 
 
 Enter operation:
