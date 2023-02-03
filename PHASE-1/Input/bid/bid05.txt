@@ -3,5 +3,9 @@ admin01
 bid
 Item01
 user01
-10.00
+200.00
+bid
+Item01
+user01
+300.00
 logout
