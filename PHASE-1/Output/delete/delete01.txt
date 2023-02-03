@@ -17,3 +17,6 @@ Hello fsuser01 (FS)!
 
 Enter operation:
 Error: Only admin has privilages for this operation.
+
+Enter operation:
+fsuser01 successfully logged out.

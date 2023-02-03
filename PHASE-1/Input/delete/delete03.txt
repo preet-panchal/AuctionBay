@@ -2,3 +2,4 @@ login
 admin01
 delete
 admin2023
+logout

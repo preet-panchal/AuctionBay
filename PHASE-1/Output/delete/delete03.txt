@@ -16,7 +16,8 @@ Enter username:
 Hello admin01 (AA)!
 
 Enter operation:
-Validating user type...
-admin01 accepted. 
 Enter the username to delete: 
-Error: User does not exist. 
+Error: User does not exist in the user-accounts file.
+
+Enter operation:
+admin01 successfully logged out.

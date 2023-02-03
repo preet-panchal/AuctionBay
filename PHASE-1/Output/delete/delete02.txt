@@ -16,7 +16,8 @@ Enter username:
 Hello admin01 (AA)!
 
 Enter operation:
-Validating user type...
-admin01 accepted. 
 Enter the username to delete: 
-Error: You cannot delete your own user. 
+Error: You cannot delete your own user.
+
+Enter operation:
+admin01 successfully logged out.
