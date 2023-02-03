@@ -3,5 +3,5 @@ bsuser01
 bid
 Item01
 user01
-1001.00
+101.00
 logout

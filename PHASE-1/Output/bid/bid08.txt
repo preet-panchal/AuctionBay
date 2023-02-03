@@ -18,7 +18,7 @@ Hello fsuser01 (FS)!:
 Enter operation:
 Enter Item Name:
 Enter Seller's Name:
-Current Highest Bid: $1000.00
+Current Highest Bid: $100.00
 Enter Bid amount:
 Error: User of type (FS) 's bid must be at least 5% greater than current highest bid.
 

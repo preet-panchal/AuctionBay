@@ -18,16 +18,16 @@ Hello admin01 (AA)!:
 Enter operation:
 Enter Item Name:
 Enter Seller's Name:
-Current Highest Bid: $1000.00
+Current Highest Bid: $100.00
 Enter Bid amount:
-Bid of $2000.00 placed on Item01
+Bid of $200.00 placed on Item01
 
 Enter operation:
 Enter Item Name:
 Enter Seller's Name:
-Current Highest Bid: $2000.00
+Current Highest Bid: $200.00
 Enter Bid amount:
-Bid of $3000.00 placed on Item01
+Bid of $300.00 placed on Item01
 
 Enter operation:
 Successfully logged out.
