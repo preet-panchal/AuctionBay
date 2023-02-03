@@ -13,10 +13,14 @@ Here is a list of operations (what to input):
 
 Enter operation:
 Enter username:
-Hello userSS (SS)!
+Hello admin01 (AA)!:
 
 Enter operation:
-Error: User of type (SS) cannot place bid.
+Enter Item Name:
+Enter Seller's Name:
+Current Highest Bid: $1000.00
+Enter Bid amount:
+Error: New bid amount is not greater than current highest bid.
 
 Enter operation:
-Successfully logged out
+Successfully logged out.
