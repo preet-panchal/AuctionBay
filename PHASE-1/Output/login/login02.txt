@@ -13,4 +13,10 @@ Here is a list of operations (what to input):
 
 Enter operation:
 Enter username: 
-Hello fsuser01 (FS)!
+Hello admin01 (AA)!
+
+Enter operation:
+Error: You are already logged in.
+
+Enter operation:
+admin01 successfully logged out.
