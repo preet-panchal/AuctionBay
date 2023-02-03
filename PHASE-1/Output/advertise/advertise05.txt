@@ -13,10 +13,11 @@ Here is a list of operations (what to input):
 
 Enter operation:
 Enter username:
-Hello bsuser01 (BS)!:
+Hello admin01 (AA)!:
 
 Enter operation:
-Error: Advertise operation cannot be performed by user of type (BS)
+Enter the Item Name:
+Error: Item name cannot be more than 25 characters in length
 
 Enter operation:
 Successfully logged out.

@@ -13,10 +13,9 @@ Here is a list of operations (what to input):
 
 Enter operation:
 Enter username:
-Hello bsuser01 (BS)!:
+Hello admin01 (AA)!:
 
 Enter operation:
-Error: Advertise operation cannot be performed by user of type (BS)
-
-Enter operation:
-Successfully logged out.
+Enter the Item Name:
+Enter the minimum bid in [$]:
+Enter the number of days of the auction duration:

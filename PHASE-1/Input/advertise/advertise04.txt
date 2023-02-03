@@ -1,0 +1,6 @@
+login
+admin01
+advertise
+Item01
+1000
+logout
