@@ -16,8 +16,8 @@ Enter username:
 Hello admin01 (AA)!:
 
 Enter operation:
-Enter the Item Name:
-Error: Item name cannot be more than 25 characters in length
+Enter the item name:
+Error: Item name must be only 25 characters in max length. 
 
 Enter operation:
-Successfully logged out.
+admin01 successfully logged out.

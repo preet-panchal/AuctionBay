@@ -2,7 +2,4 @@ login
 admin01
 create
 admin01
-newuser06
-AA
-10
 logout

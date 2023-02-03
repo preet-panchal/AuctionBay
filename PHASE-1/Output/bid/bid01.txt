@@ -13,10 +13,10 @@ Here is a list of operations (what to input):
 
 Enter operation:
 Enter username:
-Hello userSS (SS)!
+Hello ssuser01 (SS)!
 
 Enter operation:
-Error: User of type (SS) cannot place bid.
+Error: Only AA, FS, or BS have privileges for this operation.
 
 Enter operation:
-Successfully logged out
+ssuser01 successfully logged out.

@@ -13,11 +13,11 @@ Here is a list of operations (what to input):
 
 Enter operation:
 Enter username:
-Hello admin01 (AA)!:
+Hello admin01 (AA)!
 
 Enter operation:
-Enter Item Name:
-Error: Item00 does not exist in available-items-list file.
+Enter item name:
+Error: item00 does not exist in available-items file.
 
 Enter operation:
-Successfully logged out.
+admin01 successfully logged out.

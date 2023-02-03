@@ -19,10 +19,6 @@ Enter operation:
 Enter username to create:
 Enter user type:
 Error: Invalid user type. (Must be: AA, FS, BS or SS)
-Please try again.
-Enter user type:
-Enter initial credit:
-newuser02 (FS) with credit $10.00 successfully created. 
 
 Enter operation:
 admin01 successfully logged out.

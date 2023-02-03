@@ -20,9 +20,6 @@ Enter username to create:
 Enter user type:
 Enter initial credit:
 Error: Invalid input for credit. Enter a number between 0-999999. 
-Please try again.
-Enter initial credit:
-newuser05 (AA) with credit $10.00 successfully created. 
 
 Enter operation:
 admin01 successfully logged out.

@@ -1,7 +1,7 @@
 login
 admin01
 create
-newuser04
-SS
-1000000
+newuser06
+AA
+10
 logout

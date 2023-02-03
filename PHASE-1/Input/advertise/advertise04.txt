@@ -1,6 +1,6 @@
 login
 admin01
 advertise
-Item01
+item01
 1000
 logout

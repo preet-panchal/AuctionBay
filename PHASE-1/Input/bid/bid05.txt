@@ -1,11 +1,11 @@
 login
 admin01
 bid
-Item01
+item01
 user01
-200.00
+200
 bid
-Item01
+item01
 user01
-300.00
+300
 logout

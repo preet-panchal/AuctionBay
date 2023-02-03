@@ -1,10 +1,10 @@
 login
 admin01
 advertise
-Item01
-100.00
+item01
+25
 100
 bid
-Item01
+item01
 admin01
 logout

@@ -13,11 +13,12 @@ Here is a list of operations (what to input):
 
 Enter operation:
 Enter username:
-Hello admin01 (AA)!:
+Hello admin01 (AA)!
 
 Enter operation:
-Enter Item Name:
-Enter Seller's Name:
-Error: user00 does not exist.
+Enter item name:
+Enter seller's username:
+Error: This user does not exist in the user-accounts file.
+
 Enter operation:
-Successfully logged out.
+admin01 successfully logged out.

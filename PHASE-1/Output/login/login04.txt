@@ -14,7 +14,8 @@ Here is a list of operations (what to input):
 Enter operation:
 Enter username: 
 Error: This user does not exist in the user-accounts file. 
-Please try again. 
+
+Enter operation:
 Enter username: 
 Hello admin01 (AA)!
 

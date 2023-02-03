@@ -3,6 +3,5 @@ admin01
 create
 newuser03
 BS
-bow
-10
+ten
 logout

@@ -1,7 +1,5 @@
 login
 admin01
 bid
-Item00
+item00
 logout
-
-

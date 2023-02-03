@@ -13,21 +13,21 @@ Here is a list of operations (what to input):
 
 Enter operation:
 Enter username:
-Hello admin01 (AA)!:
+Hello admin01 (AA)!
 
 Enter operation:
-Enter Item Name:
-Enter Seller's Name:
+Enter item name:
+Enter seller's username:
 Current Highest Bid: $100.00
-Enter Bid amount:
-Bid of $200.00 placed on Item01
+Enter bid amount:
+Bid of $200.00 placed on item01.
 
 Enter operation:
-Enter Item Name:
-Enter Seller's Name:
+Enter item name:
+Enter seller's username:
 Current Highest Bid: $200.00
-Enter Bid amount:
-Bid of $300.00 placed on Item01
+Enter bid amount:
+Bid of $300.00 placed on item01.
 
 Enter operation:
-Successfully logged out.
+admin01 successfully logged out.

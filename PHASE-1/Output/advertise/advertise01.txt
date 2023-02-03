@@ -16,7 +16,7 @@ Enter username:
 Hello bsuser01 (BS)!:
 
 Enter operation:
-Error: Advertise operation cannot be performed by user of type (BS)
+Error: Only AA, FS, or SS have privileges for this operation.
 
 Enter operation:
-Successfully logged out.
+bsuser01 successfully logged out.

@@ -1,7 +1,7 @@
 login
 bsuser01
 bid
-Item01
+item01
 user01
-101.00
+101
 logout

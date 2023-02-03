@@ -13,13 +13,14 @@ Here is a list of operations (what to input):
 
 Enter operation:
 Enter username:
-Hello admin01 (AA)!:
+Hello admin01 (AA)!
 
 Enter operation:
-Enter Item Name:
-Enter Seller's Name:
-Enter Bid amount:
-Error: New bid amount is not entered as a double value.
+Enter item name:
+Enter seller's username:
+Current Highest Bid: $0.00
+Enter bid amount:
+Error: Invalid input for bid amount.
 
 Enter operation:
-Successfully logged out.
+admin01 successfully logged out.
