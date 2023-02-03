@@ -13,4 +13,10 @@ Here is a list of operations (what to input):
 
 Enter operation:
 Enter username: 
-Hello ssuser01 (SS)!
+Error: This username does not exist in the user-accounts file. 
+Please try again. 
+Enter username: 
+Hello admin01 (AA)!
+
+Enter operation:
+admin01 successfully logged out.

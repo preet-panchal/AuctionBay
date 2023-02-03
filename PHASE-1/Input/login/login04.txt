@@ -1,2 +1,4 @@
 login
-ssuser01
+user123
+admin01
+logout

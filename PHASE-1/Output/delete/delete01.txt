@@ -13,8 +13,7 @@ Here is a list of operations (what to input):
 
 Enter operation:
 Enter username:
-Hello admin01 (AA)!
+Hello fsuser01 (FS)!
 
 Enter operation:
-Validating user type...
-admin01 accepted. 
+Error: Only admin has privilages for this operation.

@@ -1,2 +1,4 @@
 login
-fsuser01
+admin01
+login
+logout
