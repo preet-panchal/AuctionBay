@@ -1,0 +1,11 @@
+login
+admin01
+bid
+Item01
+user01
+2000.00
+bid
+Item01
+user01
+3000.00
+logout
