@@ -12,4 +12,12 @@ Here is a list of operations (what to input):
 - Logout (logout)
 
 Enter operation:
-Error: You must login first.
+Enter username:
+Hello admin (AA)!
+
+Enter operation:
+Enter buyer's username:
+Error: This user does not exist in the user-accounts file.
+
+Enter operation:
+admin01 successfully logged out.

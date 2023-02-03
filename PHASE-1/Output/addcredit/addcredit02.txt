@@ -1,0 +1,28 @@
+Welcome to AuctionBay!
+--
+Here is a list of operations (what to input):
+- Login (login)
+- Create (create)
+- Delete (delete)
+- Advertise (advertise)
+- Bid (bid)
+- Refund (refund)
+- Add Credit (addcredit)
+- List All Items (listall)
+- Logout (logout)
+
+Enter operation:
+Enter username:
+Hello admin01 (AA)!
+
+Enter operation:
+Current credit balance for admin01: $10.00
+Enter the credit amount to add:
+Error: Invalid input for credit. Enter a number between 1-1000.
+Please try again.
+Enter the credit amount to add:
+Enter the username to add the credit to:
+New credit balance for admin01: $20.00
+
+Enter operation:
+admin01 successfully logged out.

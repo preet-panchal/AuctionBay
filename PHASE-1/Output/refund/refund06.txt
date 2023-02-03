@@ -12,5 +12,14 @@ Here is a list of operations (what to input):
 - Logout (logout)
 
 Enter operation:
-Enter username: 
-Error: User does not exist. 
+Enter username:
+Hello admin (AA)!
+
+Enter operation:
+Enter buyer's username:
+Enter seller's username:
+Enter amount to refund:
+Error: Buyer's credit balance cannot surpass $999,999.00.
+
+Enter operation:
+admin01 successfully logged out.

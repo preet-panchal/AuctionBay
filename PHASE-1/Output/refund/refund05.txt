@@ -12,11 +12,14 @@ Here is a list of operations (what to input):
 - Logout (logout)
 
 Enter operation:
-Enter username: 
-Error: This user does not exist in the user-accounts file. 
-Please try again. 
-Enter username: 
-Hello admin01 (AA)!
+Enter username:
+Hello admin (AA)!
+
+Enter operation:
+Enter buyer's username:
+Enter seller's username:
+Enter amount to refund:
+Error: Refund amount cannot be greater than seller's credit balance.
 
 Enter operation:
 admin01 successfully logged out.

@@ -12,8 +12,14 @@ Here is a list of operations (what to input):
 - Logout (logout)
 
 Enter operation:
-Enter username: 
-Hello admin01 (AA)!
+Enter username:
+Hello admin (AA)!
 
 Enter operation:
-Error: You are already logged in.
+Enter buyer's username:
+Enter seller's username:
+Enter amount to refund:
+Error: Refund must match item cost.
+
+Enter operation:
+admin01 successfully logged out.
