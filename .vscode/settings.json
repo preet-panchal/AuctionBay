@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "*.py": "python",
+        "*.java": "java",
+        "sstream": "cpp",
+        "iosfwd": "cpp"
+    }
+}
