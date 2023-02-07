@@ -3,6 +3,7 @@
         "*.py": "python",
         "*.java": "java",
         "sstream": "cpp",
-        "iosfwd": "cpp"
+        "iosfwd": "cpp",
+        "random": "cpp"
     }
 }
