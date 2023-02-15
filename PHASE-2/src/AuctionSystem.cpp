@@ -1,30 +1,30 @@
-#include <string>
-#include <iostream>
+#include "AuctionSystem.h"
+#include "User.h"
+#include <algorithm>
 #include <sstream>
-#include <type_traits>
-#include <typeinfo>
-using namespace std;
 
+// Initializes the Auction System class constructor
+AuctionSystem::AuctionSystem(bool auctionStatus) {
+	isOpen = auctionStatus;
+	loggedIn = false;
+}
 
-int main () {
+bool AuctionSystem::Login(USER_RECORD userRecord, User &currentUser) {
+	loggedIn = true; // Login method called once user logins in
 
-    cout << "Welcome to AuctionBay!\n--" << endl;
-    cout << "Here is a list of operations (what to input):" << endl;
-    cout << "- Login (login)\n" 
-         << "- Create (create)\n"
-         << "- Delete (delete)\n"
-         << "- Advertise (advertise)\n"
-         << "- Bid (bid)\n"
-         << "- Refund (refund)\n"
-         << "- Add Credit (addcredit)\n"
-         << "- List All Items (listall)\n"
-         << "- Logout (logout)\n" << endl;
+	// Initializing all user information from current active login in session
+	currentUser.username = userRecord.username;
+	currentUser.accountType = userRecord.accountType;
+	currentUser.credit = userRecord.credit;
 
-    string user_input;
-    do {
-        printf("Enter operation: ");
-        cin >> user_input;
-        printf("\ntest\n");
-    } while (user_input != "logout");
-};
+	// Welcome user prompt
+	std::cout << "Hello " << currentUser.username << " (" << currentUser.accountType << ")!" << std::endl;
+	return loggedIn;
+}
+
+// Logout method called once user logs out
+void AuctionSystem::Logout(User &currentUser) {
+	std::printf("%s successfully logged out.\n", currentUser.username.c_str());
+	loggedIn = false;		// Reset loggedIn status once user logsout
+}
 
