@@ -19,16 +19,20 @@ USER_RECORD User::CreateAccount() {
 
 	std::printf("Enter a username to create: ");
 	std::cin >> newUser.username;
-	std::printf("Enter an user type:");
-	std::cin >> newUser.accountType;
-	if (newUser.username.length() > 15){
-		newUser.username = "Error: Username must be only 15 characters in max length.\n";
+	if (newUser.username.length() > 15) {
 		newUser.accountType = "ER";
-	} else // TO-DO: need to fix error catching
-	if (newUser.accountType != "AA" && newUser.accountType != "FS" && newUser.accountType != "BS" && newUser.accountType != "SS"){
-		newUser.username = "Error: Invalid user type. (Must be: AA, FS, BS or SS)\n";
-		newUser.accountType = "ER";
+		std::cin.ignore();
+		return newUser;
 	}
+
+	std::printf("Enter an user type: ");
+	std::cin >> newUser.accountType;
+	if (newUser.accountType != "AA" && newUser.accountType != "FS" && newUser.accountType != "BS" && newUser.accountType != "SS") {
+		newUser.accountType = "ER";
+		std::cin.ignore();
+		return newUser;
+	}
+	
 	std::cin.ignore();
 
 	return newUser;
@@ -47,58 +51,53 @@ ITEM_RECORD User::Advertise() {
 	std::string minBid;
 	std::string duration;
 
+	// User input for item name for advertise operation
 	std::printf("Enter the item name: ");
-	std::cin >> itemRecord.itemName;
-	// TO-DO: fix error
+	std::cin >> itemRecord.itemName;  
+	// Checking if item name is valid
 	if (itemRecord.itemName.length() > 25 || itemRecord.itemName.length() < 1) {
 		itemRecord.duration = 999;
 		std::printf("Error: Item name must be between 1-25 characters in length.\n");
 		return itemRecord;
 	}
+
 	std::cin.clear();
 
+	// User input for minimum bid for advertise operation
 	std::printf("Enter the minimum bid ($): ");
-	std::cin >> itemRecord.minBid;
-	// TO-DO: fix error
-	if (itemRecord.minBid > 999.99 || itemRecord.minBid < 0) { 
+	std::cin >> minBid;
+	if (is_number(minBid) == false) { // Checking if min bid amount is a number
 		itemRecord.duration = 999;
-		std::printf("Error: Minimum bid amount must be betwceen 0-999.99.\n");
-		return itemRecord;
-	} 
-	// if (is_number(itemRecord.minBid) == false) {
-	// 	itemRecord.duration = 999;
-	// 	std::printf("Error: Minimum bid amount must be a number.\n");
-	// 	return itemRecord; 
-	// } else {
-	// 	if (itemRecord.minBid > 999.99 || itemRecord.minBid < 0) { 
-	// 		itemRecord.duration = 999;
-	// 		std::printf("Error: Minimum bid amount must be betwceen 0-999.99.\n");
-	// 		return itemRecord;
-	// 	} 
-	// 	itemRecord.minBid = std::stoi(minBid);
-	// }
+		std::printf("Error: Minimum bid amount must be a number.\n");
+		return itemRecord; 
+	} else { // Checking if min bid amount is valid
+		if (std::stoi(minBid) > 999.99 || std::stoi(minBid) < 0) { 
+			itemRecord.duration = 999;
+			std::printf("Error: Minimum bid amount must be betwceen 0-999.99.\n");
+			return itemRecord;
+		} else {
+			itemRecord.minBid = std::stoi(minBid);
+		}
+	}
+	
 	std::cin.clear();
 
+	// User input for duration for advertise operation
 	std::printf("Enter auction duration (in days): ");
-	std::cin >> itemRecord.duration;
-	// TO-DO: fix error
-	if (itemRecord.duration > 100 || itemRecord.duration < 1 ) {
+	std::cin >> duration;
+	if (is_number(duration) == false) { // Checking if duration is a number
 		itemRecord.duration = 999;
-		std::printf("Error: Auction duration must be between 1-100 days.\n");
-		return itemRecord;
-	}   
-	// if (is_number(itemRecord.duration) == false) {
-	// 	itemRecord.duration = 999;
-	// 	std::printf("Error: Auction duration must be a number.\n");
-	// 	return itemRecord; 
-	// } else {
-	// 	if (itemRecord.duration > 100 || itemRecord.duration < 1 ) {
-	// 		itemRecord.duration = 999;
-	// 		std::printf("Error: Auction duration must be between 1-100 days.\n");
-	// 		return itemRecord;
-	// 	}   
-	// 	itemRecord.duration = std::stoi(duration);
-	// }
+		std::printf("Error: Duration must be a number.\n");
+		return itemRecord; 
+	} else { // Checking if duration is valid
+		if (std::stoi(duration) > 100 || std::stoi(duration) < 1) { 
+			itemRecord.duration = 999;
+			std::printf("Error: Auction duration must be between 1-100 days.\n");
+			return itemRecord;
+		} else {
+			itemRecord.duration = std::stoi(duration);
+		}
+	}
 
 	return itemRecord;
 }
