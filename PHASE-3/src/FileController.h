@@ -18,6 +18,8 @@ class FileController {
 		// User file methods
 		USER_RECORD getUser(std::string lookupName);
 		bool findUser(std::string lookupName);
+		bool findItem(std::string lookupItem);
+		ITEM_RECORD getItem(std::string lookupItem);
 
 		void addUser(USER_RECORD newUser);
 		void deleteUser(std::string username);

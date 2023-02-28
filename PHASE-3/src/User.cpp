@@ -102,6 +102,46 @@ ITEM_RECORD User::Advertise() {
 	return itemRecord;
 }
 
+/*
+ITEM_RECORD User::Bid(std::string itemName, std::string seller) {
+	ITEM_RECORD itemRecord;
+	itemRecord.itemName = itemName;
+	itemRecord.seller = seller;
+	return itemRecord;
+}
+*/
+
+REFUND_RECORD User::Refund() {
+	REFUND_RECORD refundRecord; // Initialize new REFUND_RECORD
+
+	// Asking user for inputs to run refund operation
+	std::string amount;
+	std::printf("Enter buyer's username: ");
+	std::cin >> refundRecord.buyer;
+	std::cin.clear();
+	std::printf("Enter seller's username: ");
+	std::cin >> refundRecord.seller;
+	std::cin.clear();
+	std::printf("Enter refund amount: ");
+	std::cin >> amount;
+
+	std::stringstream sstr(amount);
+	float f;
+	if (sstr >> f) { // TO-DO: fix condition
+		float famount = std::stof(amount);
+		if (typeid(famount) == typeid(float)) {
+			refundRecord.amount = famount;
+		}
+	} else {
+		std::printf("Error - amount must be a number.\n"); // TO-DO: fix error
+		refundRecord.buyer.empty();
+		refundRecord.seller.empty();
+		refundRecord.amount = 0;
+	}
+
+	return refundRecord;
+}
+
 // TO-DO: addcredit does not function as intended
 float User::AddCredit() {
 	std::string amount;	
@@ -133,58 +173,6 @@ float User::AddCredit() {
 	}
 
 	return credit;
-}
-
-ITEM_RECORD User::Bid() {
-	ITEM_RECORD itemRecord;
-	std::string duration;
-
-	std::printf("Enter item name: ");
-	std::cin >> itemRecord.itemName;
-	// std::printf("\nEnter number of days to auction: ");
-	// std::cin >> duration;
-	std::printf("Enter seller's username: ");
-	std::cin >> itemRecord.seller;
-
-	// if(is_number(duration) == false){
-	// 	std::printf("\nError - Auction Duration must be a number.");
-	// 	itemRecord.duration = -1;
-	// }else{
-	// 	itemRecord.duration = stoi(duration);
-	// }
-
-	return itemRecord;
-}
-
-REFUND_RECORD User::Refund() {
-	REFUND_RECORD refundRecord; // Initialize new REFUND_RECORD
-
-	// Asking user for inputs to run refund operation
-	std::string amount;
-	std::printf("Enter buyer's username: ");
-	std::cin >> refundRecord.buyer;
-	std::cin.clear();
-	std::printf("Enter seller's username: ");
-	std::cin >> refundRecord.seller;
-	std::cin.clear();
-	std::printf("Enter refund amount: ");
-	std::cin >> amount;
-
-	std::stringstream sstr(amount);
-	float f;
-	if (sstr >> f) { // TO-DO: fix condition
-		float famount = std::stof(amount);
-		if (typeid(famount) == typeid(float)) {
-			refundRecord.amount = famount;
-		}
-	} else {
-		std::printf("Error - amount must be a number.\n"); // TO-DO: fix error
-		refundRecord.buyer.empty();
-		refundRecord.seller.empty();
-		refundRecord.amount = 0;
-	}
-
-	return refundRecord;
 }
 
 // Validate if input is a number

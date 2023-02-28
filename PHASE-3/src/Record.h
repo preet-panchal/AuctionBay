@@ -53,7 +53,7 @@ struct USER_RECORD {
 // Puts a record (item record) into a string
 inline std::string recordToString(ITEM_RECORD itemRecord){
     std::stringstream itemStream;
-	itemStream << itemRecord.itemName << " " << itemRecord.seller << " " << itemRecord.duration << " " << itemRecord.minBid;
+	itemStream << itemRecord.itemName << " " << itemRecord.seller << " " << itemRecord.duration << " " << itemRecord.highestBid;
 	std::string itemInfo = itemStream.str();
 	return itemInfo;
 }

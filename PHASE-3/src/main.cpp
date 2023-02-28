@@ -159,43 +159,67 @@ int main(int argc, char** argv){
 			if (currentUser.accountType == SELL_STANDARD) {			// Validating user privilege, making sure it is not a sell standard account
 				printf("Error: Only AA, FS, or BS have privileges for this operation.\n");
 			} else {
-				ITEM_RECORD itemRecord = currentUser.Bid(); 	  // Create item record for item to bid on
-				if (itemRecord.duration > -1) {
-					float highestBid = fc.getItemBid(itemRecord); // Find item and the highest bid currently on it (return -1 if item not found)
+				string itemName;
+				string seller; 
 
-					if (highestBid > -1) {
-						string amount;
-						cout << "Current Highest Bid: $" << highestBid << endl;
-						printf("Enter new bid amount: ");
-						cin >> amount;
+				// ITEM_RECORD itemRecord = currentUser.Bid(); 	  // Create item record for item to bid on
+				std::printf("Enter item name: ");
+				std::cin >> itemName;
 
-						std::stringstream sstr(amount);
-						float f;
-						if (sstr >> f) {
-							float famount = stof(amount);  // Convert the credit amount to a float
-							if (typeid(famount) == typeid(float)) {
-								float newBid = famount;
-								highestBid += highestBid*0.05; // Increase the highest bid by 5% (requirement)
-
-								if(newBid >= highestBid) {
-									itemRecord.highestBid = newBid;
-									fc.updateItemBid(itemRecord, currentUser.username);
-									printf("Bid of $%f successfully placed on %s.\n", newBid, itemRecord.itemName.c_str());
+				if (!fc.findItem(itemName)) {
+					printf("Error: %s does not exist in available-items file.\n", itemName.c_str());
+					cin.ignore();
+				} else {
+					printf("Enter seller's username: ");
+					cin >> seller;
+					if (!fc.findUser(seller)) {
+						printf("Error: This username does not exist in the user-accounts file.\n"); 
+						cin.ignore();
+					} else if (seller == currentUser.username) {
+						printf("Error: You cannot place a bid on your own advertised item.\n"); 
+						cin.ignore();
+					} else {
+						ITEM_RECORD itemRecord = fc.getItem(itemName);
+						if (itemRecord.seller != seller) { // Check if the seller is correct for the inputted item name
+							printf("Error: This user does not sell this item.\n");
+							cin.ignore();
+						} else {
+							if (itemRecord.duration > -1) {
+								float highestBid = itemRecord.highestBid; // Find item and the highest bid currently on it (return -1 if item not found)
+								if (highestBid > -1) {
+									string bidAmount;
+									cout << "Current Highest Bid: $" << highestBid << endl;
+									printf("Enter new bid amount: ");
+									cin >> bidAmount;
 									
-									transactionCode = BID_TRANSACTION_CODE;
-									transactionDetails = recordToString(itemRecord);
-								} else { // TO-DO: fix error
-									printf("Error: Your bid amount must be atleast 5%% greater than current highest bid.\n");	
+									if (!currentUser.is_number(bidAmount)) {
+										printf("Error: Bid amount must be a number.\n");
+										cin.ignore();
+									} else {
+										if (stof(bidAmount) > currentUser.credit) {
+											printf("Error: You do not have enough credits to complete this bid.\n");
+											cin.ignore();
+										} else if (currentUser.accountType == ADMIN && stof(bidAmount) <= highestBid) {
+											printf("Error: Bid amount must be greater than current highest bid.\n");
+											cin.ignore();
+										} else if (currentUser.accountType != ADMIN && stof(bidAmount) <= (highestBid*0.05 + highestBid)) {
+											printf("Error: Bid amount must be 5%% greater than current highest bid.\n");
+											cin.ignore();
+										} else {
+											itemRecord.highestBid = stof(bidAmount);
+											fc.updateItemBid(itemRecord, currentUser.username);
+											printf("Bid of $%.2f successfully placed on %s.\n", stof(bidAmount), itemRecord.itemName.c_str());
+											
+											transactionCode = BID_TRANSACTION_CODE;
+											transactionDetails = recordToString(itemRecord);
+										}
+										cin.ignore();
+									} 
 								}
 							}
-						} else {
-							std::printf("Error: Invalid input for bid amount.\n"); // TO-DO: fix error
 						}
-					} else {
-						printf("Error: %s does not exist in available-items file.\n", itemRecord.itemName.c_str());
 					}
 				}
-				cin.ignore();
 			}
 		}
 

@@ -55,6 +55,48 @@ bool FileController::findUser(std::string lookupName) {
 	return userFound;
 }
 
+// Checks if a user exists in the current users file
+bool FileController::findItem(std::string lookupItem) {
+	std::ifstream infile(availableItemsFile);
+
+	bool itemFound = false;
+	std::string itemName;
+	std::string seller;
+	std::string buyer;
+	float highestBid;
+	int duration;
+
+	while (infile >> itemName >> seller >> buyer >> duration >> highestBid) {
+		if (lookupItem == itemName) {
+			itemFound = true;	
+		}
+	}
+	return itemFound;
+}
+
+// Retrieves a user record from the current users file
+ITEM_RECORD FileController::getItem(std::string lookupItem) {
+	std::ifstream infile(availableItemsFile);
+
+	ITEM_RECORD itemRecord;
+	std::string itemName;
+	std::string seller;
+	std::string buyer;
+	float highestBid;
+	int duration;
+
+	while (infile >> itemName >> seller >> buyer >> duration >> highestBid) {
+		if (lookupItem == itemName) { // If username in file matches lookup name then set user attributes to those in file
+			itemRecord.itemName = itemName;
+			itemRecord.seller = seller;
+			itemRecord.buyer = buyer;
+			itemRecord.highestBid = highestBid;
+			itemRecord.duration = duration;
+		}
+	}
+	return itemRecord;
+}
+
 // Adds a user to the current users file
 void FileController::addUser(USER_RECORD newUser) {
 	std::ofstream outfile;
@@ -168,7 +210,7 @@ void FileController::displayAvailableItems() {
 		// 		  << " | Seller: " << seller 
 		// 		  << " | Bid: " << highestBid 
 		// 		  << " | Duration:" << duration << std::endl;
-		std::printf("%s \t %s \t %.2f \t %d\n", itemName.c_str(), seller.c_str(), highestBid, duration); 
+		std::printf("%s \t\t %s \t\t %.2f \t\t %d\n", itemName.c_str(), seller.c_str(), highestBid, duration); 
 	}
 }
 
@@ -205,7 +247,7 @@ void FileController::updateItemBid(ITEM_RECORD itemRecord, std::string buyer) {
 		if (itemRecord.itemName == item.itemName && itemRecord.seller == item.seller && itemRecord.duration == item.duration) {
 			item.highestBid = itemRecord.highestBid;	
 			item.buyer = buyer;
-			std::cout << item.buyer << " " << item.highestBid<< std::endl;
+			// std::cout << item.buyer << " " << item.highestBid<< std::endl;
 		}
 		current_items.push_back(item);
 	}

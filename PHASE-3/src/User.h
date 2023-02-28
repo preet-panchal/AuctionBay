@@ -17,7 +17,7 @@ class User {
 		std::string DeleteAccount();
 
 		ITEM_RECORD Advertise();
-		ITEM_RECORD Bid();
+		ITEM_RECORD Bid(std::string itemName, std::string seller);
 
 		float AddCredit();
 		REFUND_RECORD Refund();	
