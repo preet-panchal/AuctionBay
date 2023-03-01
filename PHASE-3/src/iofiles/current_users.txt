@@ -1,5 +1,5 @@
-user01 AA 2000
-user02 FS 100
-user03 BS 0
+user01 AA 3000
+user02 FS 3200
+user03 BS 2030
 user04 SS 0
-testuser01 FS 0
+testuser01 FS 999999

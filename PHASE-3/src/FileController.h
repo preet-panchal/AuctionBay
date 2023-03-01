@@ -28,6 +28,7 @@ class FileController {
 		// Item file methods
 		void addItem(ITEM_RECORD itemRecord);
 		void displayAvailableItems();
+		void displayAvailableUsers();
 		float getItemBid(ITEM_RECORD itemRecord);
 		void updateItemBid(ITEM_RECORD itemRecord, std::string buyer);
 
