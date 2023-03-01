@@ -116,32 +116,19 @@ REFUND_RECORD User::Refund() {
 
 	// Asking user for inputs to run refund operation
 	std::string amount;
-	std::printf("Enter buyer's username: ");
-	std::cin >> refundRecord.buyer;
-	// check if buyer username exists
-	std::cin.clear();
-	std::printf("Enter seller's username: ");
-	std::cin >> refundRecord.seller;
-	// check if seller username exists
-	std::cin.clear();
 	std::printf("Enter refund amount: ");
 	std::cin >> amount; 
-	if (!is_number(amount)) {
-		printf("Error: Refund amount must be a number.\n");
-		std::cin.ignore();
-	}
-	// check if refund amount is number
-	// check if its valid (matches item cost)
-
-	std::stringstream sstr(amount);
-	float f;
-	if (sstr >> f) { // TO-DO: fix condition
-		float famount = std::stof(amount);
-		if (typeid(famount) == typeid(float)) {
-			refundRecord.amount = famount;
+	if (isFloat(amount)) {
+		if (stof(amount) <= 0) {
+			printf("Error: Refund amount must be a greater than 0.\n");
+			refundRecord.buyer.empty();
+			refundRecord.seller.empty();
+			refundRecord.amount = 0;
+		} else {
+			refundRecord.amount = stof(amount);
 		}
 	} else {
-		std::printf("Error - amount must be a number.\n"); // TO-DO: fix error
+		printf("Error: Refund amount must be a number.\n");
 		refundRecord.buyer.empty();
 		refundRecord.seller.empty();
 		refundRecord.amount = 0;

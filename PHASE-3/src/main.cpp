@@ -244,32 +244,38 @@ int main(int argc, char** argv){
 			} else {
 				REFUND_RECORD refundRecord = currentUser.Refund();	// Create refund record for buyer to get refund from seller
 
-				if (refundRecord.amount != 0) {
+				if (refundRecord.amount > 0) {
+					std::printf("Enter buyer's username: ");
+					std::cin >> refundRecord.buyer;
+					// check if buyer username exists
 					if (!fc.findUser(refundRecord.buyer)) {
 						printf("Error: This username does not exist in the user-accounts file.\n"); // TO-DO: fix error
-					} else if (!fc.findUser(refundRecord.seller)) {
-						printf("Error: This username does not exist in the user-accounts file.\n"); // TO-DO: fix error
 					} else {
-						USER_RECORD buyerRecord = fc.getUser(refundRecord.buyer);
-						USER_RECORD sellerRecord = fc.getUser(refundRecord.seller);
+						std::cin.clear();
+						std::printf("Enter seller's username: ");
+						std::cin >> refundRecord.seller;
+						// check if seller username exists
+						if (!fc.findUser(refundRecord.seller)) {
+							printf("Error: This username does not exist in the user-accounts file.\n"); // TO-DO: fix error
+						} else {
+							USER_RECORD buyerRecord = fc.getUser(refundRecord.buyer);
+							USER_RECORD sellerRecord = fc.getUser(refundRecord.seller);
 
-						if (typeid(refundRecord.amount) == typeid(float)) {
-							if (refundRecord.amount <= MAX_CREDIT) {
+							if (buyerRecord.credit + refundRecord.amount > MAX_CREDIT) {
+								printf("Error: Buyer's credit balance cannot be more than $999,999.00.\n"); // TO-DO: fix error
+							} else if (sellerRecord.credit - refundRecord.amount < MIN_CREDIT) {
+								printf("Error: Seller's credit balance cannot be less than $0.\n"); // TO-DO: fix error
+							} else {
 								buyerRecord.credit += refundRecord.amount;  // Add the refund amount to the buyers account
 								sellerRecord.credit -= refundRecord.amount; // Remove the refund amount from the sellers account
 
 								fc.updateCredit(buyerRecord.username, buyerRecord.credit);   // Update the buyers credit record
 								fc.updateCredit(sellerRecord.username, sellerRecord.credit); // Update the sellers credit record
 
-								printf("\n$%f refunded from %s to %s", refundRecord.amount, refundRecord.seller.c_str(), refundRecord.buyer.c_str());
+								printf("\n$%.2f refunded from %s to %s", refundRecord.amount, refundRecord.seller.c_str(), refundRecord.buyer.c_str());
 								transactionCode = REFUND_TRANSACTION_CODE;
 								transactionDetails = recordToString(refundRecord);
-							} else {
-								// printf("\nError - exceeded $%i refund limit.", MAX_CREDIT);
-								printf("Error: Buyer's credit balance cannot surpass $999,999.00.\n"); // TO-DO: fix error
 							}
-						} else {
-								printf("Error - credit amount must be a number.\n"); // TO-DO: fix error
 						}
 					}
 				}
