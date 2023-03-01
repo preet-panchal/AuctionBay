@@ -5,6 +5,7 @@
 #include <iostream>
 #include <fstream>
 #include <vector>
+#include <iomanip>
 
 // Initializes the File Controller
 FileController::FileController(std::string userFile, std::string itemFile, std::string transFile) {
@@ -204,13 +205,29 @@ void FileController::displayAvailableItems() {
 	int duration;
 	float highestBid;
 
-	std::printf("Item Name: \t Item Seller: \t Current Bid: \t Auction Days Left:\n");
+	std::printf("Item Name: \t\t Item Seller: \t Highest Bidder: \t Highest Bid: \t Auction Days Left:\n");
 	while (infile >> itemName >> seller >> buyer >> duration >> highestBid) {
 		// std::cout << "Item name: " << itemName 
 		// 		  << " | Seller: " << seller 
 		// 		  << " | Bid: " << highestBid 
 		// 		  << " | Duration:" << duration << std::endl;
-		std::printf("%s \t\t %s \t\t %.2f \t\t %d\n", itemName.c_str(), seller.c_str(), highestBid, duration); 
+		// std::printf("%s \t\t %s \t\t %.2f \t\t %d\n", itemName.c_str(), seller.c_str(), highestBid, duration);
+		std::cout << std::setw(25) << std::left << itemName << std::setw(16) << std::left << seller << std::setw(24) << std::left << buyer << std::setw(16) << std::left << highestBid << duration << std::endl;
+	}
+}
+
+// Displays and formats the available items file for 'LISTALL' operation
+void FileController::displayAvailableUsers() {
+	std::ifstream infile(currentUsersFile);
+
+	USER_RECORD userRecord;
+	std::string userName;
+	std::string accountType;
+	float credit;
+
+	std::printf("User Name: \t\t Account Type: \t Credit Balance:\n");
+	while (infile >> userName >> accountType >> credit) {
+		std::cout << std::setw(25) << std::left << userName << std::setw(16) << std::left << accountType << std::setw(16) << std::left << credit << std::endl;
 	}
 }
 

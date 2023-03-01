@@ -45,7 +45,8 @@ int main(int argc, char** argv){
          << "- Bid (bid)\n"
          << "- Refund (refund)\n"
          << "- Add Credit (addcredit)\n"
-         << "- List All Items (listall)\n"
+         << "- List All Items (listallitems)\n"
+		 << "- List All Users (listallusers)\n"
          << "- Logout (logout)\n" << endl;
 
 	// Repeat until auction closes (exit command sets auction to closed)
@@ -224,22 +225,34 @@ int main(int argc, char** argv){
 		}
 
 		// User enters listall operation - List all all items in available items file
-		else if (command == "listall") {
+		else if (command == "listallitems") {
 			fc.displayAvailableItems(); // Displays and formats current items file
+		}
+
+		else if (command == "listallusers") {
+			if (currentUser.accountType == ADMIN) {
+				fc.displayAvailableUsers(); // Displays and formats current users file
+			} else {
+				printf("Error: Only AA has privilages for this operation.\n");
+			}
 		}
 
 		else if (command == "refund") {
 			// Validating user privilege, making sure it is an admin
 			if (currentUser.accountType == FULL_STANDARD || currentUser.accountType == BUY_STANDARD || currentUser.accountType == SELL_STANDARD) {
-				printf("Error: Only admin has privilages for this operation.\n");
+				printf("Error: Only AA has privilages for this operation.\n");
 			} else {
 				REFUND_RECORD refundRecord = currentUser.Refund();	// Create refund record for buyer to get refund from seller
 
 				if (refundRecord.amount != 0) {
-					USER_RECORD buyerRecord = fc.getUser(refundRecord.buyer);
-					USER_RECORD sellerRecord = fc.getUser(refundRecord.seller);
+					if (!fc.findUser(refundRecord.buyer)) {
+						printf("Error: This username does not exist in the user-accounts file.\n"); // TO-DO: fix error
+					} else if (!fc.findUser(refundRecord.seller)) {
+						printf("Error: This username does not exist in the user-accounts file.\n"); // TO-DO: fix error
+					} else {
+						USER_RECORD buyerRecord = fc.getUser(refundRecord.buyer);
+						USER_RECORD sellerRecord = fc.getUser(refundRecord.seller);
 
-					if (!buyerRecord.username.empty() && !sellerRecord.username.empty()) {
 						if (typeid(refundRecord.amount) == typeid(float)) {
 							if (refundRecord.amount <= MAX_CREDIT) {
 								buyerRecord.credit += refundRecord.amount;  // Add the refund amount to the buyers account
@@ -256,10 +269,8 @@ int main(int argc, char** argv){
 								printf("Error: Buyer's credit balance cannot surpass $999,999.00.\n"); // TO-DO: fix error
 							}
 						} else {
-							printf("Error - credit amount must be a number.\n"); // TO-DO: fix error
-						}	
-					} else {
-						printf("Error - Username pair not found.\n"); // TO-DO: fix error
+								printf("Error - credit amount must be a number.\n"); // TO-DO: fix error
+						}
 					}
 				}
 				cin.ignore();
@@ -268,26 +279,60 @@ int main(int argc, char** argv){
 
 		// User enters addcredit operation - Add a credit amount to a user
 		else if (command == "addcredit") {
-			std::string username;
-			if (currentUser.accountType == ADMIN) {
-				std::cout << "Enter the username to add credit to: ";
-				std::cin >> username;
+			printf("Current credit balance for %s: $%.2f\n", currentUser.username.c_str(), currentUser.credit); 
+			std::string amount;	
+			std::cout << "Enter the credit amount to add: ";
+			std::cin >> amount;
+			if (!currentUser.isFloat(amount)) {
+				//if (!currentUser.)
+				printf("Error: Credit amount must be a number.\n");
 			} else {
-				username = currentUser.username;
-			}
-			userFound = fc.findUser(username);
-			if (userFound) {
-				float newCredit = currentUser.AddCredit(); // Get a new credit amount for the user
-				if (newCredit == currentUser.credit) {
-					fc.updateCredit(username, newCredit); // Update users credit in the current users file
+				if (stof(amount) > MAX_CREDIT_ADD || stof(amount) < 1) {
+					printf("Error: Invalid input for credit. Enter a number between 1-1000.\n");
+				} else {
+					if (currentUser.accountType == ADMIN) {
+						std::string username;
+						std::cout << "Enter the username to add credit to: ";
+						std::cin >> username;
+						if (!fc.findUser(username)) {
+							printf("Error: This username does not exist in the user-accounts file.\n");
+						} else {
+							USER_RECORD userRecord = fc.getUser(username);
+							float newCredit;
+							if (userRecord.username == currentUser.username) {
+								newCredit = currentUser.AddCredit(stof(amount));
+								userRecord.credit = newCredit; 
+								fc.updateCredit(username, newCredit); // Update users credit in the current users file
 
-					transactionCode = ADDCREDIT_TRANSACTION_CODE;
-					transactionDetails = currentUser.toString();
-				}	
-			} else { // TO-DO: fix error
-				printf("Error: The user does not exist in the user-accounts file.\n");
+								transactionCode = ADDCREDIT_TRANSACTION_CODE;
+								transactionDetails = currentUser.toString();
+								printf("New credit balance for %s: $%.2f\n", username.c_str(), newCredit);
+							} else {
+								if ((userRecord.credit + stof(amount)) < MAX_CREDIT) {
+									newCredit = userRecord.credit + stof(amount);
+									userRecord.credit = newCredit; 
+									fc.updateCredit(username, newCredit); // Update users credit in the current users file
+
+									transactionCode = ADDCREDIT_TRANSACTION_CODE;
+									transactionDetails = currentUser.toString();
+									printf("New credit balance for %s: $%.2f\n", username.c_str(), newCredit);
+								} else {
+									std::printf("Error: Exceeded $%i credit limit for this user.\n", MAX_CREDIT); 
+								}
+							}
+						}	
+					} else {
+						float newCredit = currentUser.AddCredit(stof(amount));
+						fc.updateCredit(currentUser.username, newCredit); // Update users credit in the current users file
+
+						transactionCode = ADDCREDIT_TRANSACTION_CODE;
+						transactionDetails = currentUser.toString();
+						printf("New credit balance for %s: $%.2f\n", currentUser.username.c_str(), currentUser.credit);
+					}
+				}
+				cin.ignore();
 			}
-			cin.ignore();
+			//cin.ignore();
 		}	
 
 		// User enters login operation - when already logged in (login02 test)

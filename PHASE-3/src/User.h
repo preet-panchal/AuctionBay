@@ -19,10 +19,11 @@ class User {
 		ITEM_RECORD Advertise();
 		ITEM_RECORD Bid(std::string itemName, std::string seller);
 
-		float AddCredit();
+		float AddCredit(float amount);
 		REFUND_RECORD Refund();	
 
 		bool is_number(const std::string& s);
+		bool isFloat(const std::string& s);
 		
 };
 #endif

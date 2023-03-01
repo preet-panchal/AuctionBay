@@ -118,12 +118,20 @@ REFUND_RECORD User::Refund() {
 	std::string amount;
 	std::printf("Enter buyer's username: ");
 	std::cin >> refundRecord.buyer;
+	// check if buyer username exists
 	std::cin.clear();
 	std::printf("Enter seller's username: ");
 	std::cin >> refundRecord.seller;
+	// check if seller username exists
 	std::cin.clear();
 	std::printf("Enter refund amount: ");
-	std::cin >> amount;
+	std::cin >> amount; 
+	if (!is_number(amount)) {
+		printf("Error: Refund amount must be a number.\n");
+		std::cin.ignore();
+	}
+	// check if refund amount is number
+	// check if its valid (matches item cost)
 
 	std::stringstream sstr(amount);
 	float f;
@@ -143,7 +151,16 @@ REFUND_RECORD User::Refund() {
 }
 
 // TO-DO: addcredit does not function as intended
-float User::AddCredit() {
+float User::AddCredit(float amount) {
+	if ((this->credit + amount) < MAX_CREDIT) {
+		this->credit += amount;
+		// std::cout << "\nSuccessfully added $ " << amount << std::endl;
+		// std::cout << "\nCredit is now: " << credit << std::endl;
+	} else {
+		std::printf("Error: Exceeded $%i credit limit for this user.\n", MAX_CREDIT); 
+	}
+	return this->credit;
+	/*
 	std::string amount;	
 	std::cout << "Enter the credit amount to add: ";
 	std::cin >> amount;
@@ -173,6 +190,7 @@ float User::AddCredit() {
 	}
 
 	return credit;
+	*/
 }
 
 // Validate if input is a number
@@ -183,4 +201,11 @@ bool User::is_number(const std::string& s) {
 		++it;
 	} 
     return !s.empty() && it == s.end();
+}
+
+bool User::isFloat(const std::string& s) {
+    std::istringstream iss(s);
+    float f;
+    iss >> std::noskipws >> f;
+    return iss.eof() && !iss.fail(); 
 }
