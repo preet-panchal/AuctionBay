@@ -7,6 +7,8 @@
 #include <iostream>
 #include <fstream>
 
+using namespace std;
+
 
 class AuctionSystem {	
 	public:
@@ -19,5 +21,10 @@ class AuctionSystem {
 		// Public methods
 		bool Login(USER_RECORD userRecord, User &currentUser);
 		void Logout(User &currentUser);
+
 };
+
+string Encrypt(string password);
+string Decrypt(string password);
+
 #endif

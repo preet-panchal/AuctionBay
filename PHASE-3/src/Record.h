@@ -26,6 +26,7 @@ const int MIN_CREDIT = 0;
 const int MAX_CREDIT_ADD = 1000;
 const int MAX_DURATION = 999;
 const int MAX_USERNAME_LENGTH = 15;
+const int SALT = 4;
 
 /* RECORD DELCARATIONS */
 struct ITEM_RECORD {
@@ -45,6 +46,7 @@ struct REFUND_RECORD {
 
 struct USER_RECORD {
     std::string username;
+	std::string password;
 	std::string accountType;
 	float credit = 0;
 };
@@ -69,7 +71,7 @@ inline std::string recordToString(REFUND_RECORD refundRecord){
 // Overloads the recordToString function to accept a user record
 inline std::string recordToString(USER_RECORD userRecord){
     std::stringstream userStream;
-	userStream << userRecord.username << " " << userRecord.accountType << " " << userRecord.credit;
+	userStream << userRecord.username << " " << userRecord.password << " " << userRecord.accountType << " " << userRecord.credit;
 	std::string userInfo = userStream.str();
 	return userInfo;
 }

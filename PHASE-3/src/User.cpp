@@ -1,4 +1,5 @@
 #include "User.h"
+#include "AuctionSystem.h"
 #include <string>
 #include <iostream>
 #include <sstream>
@@ -32,8 +33,12 @@ USER_RECORD User::CreateAccount() {
 		std::cin.ignore();
 		return newUser;
 	}
-	
+
+	std:string password;
+	std::printf("Enter a password: ");
+	std::cin >> password;
 	std::cin.ignore();
+	newUser.password = Encrypt(password);
 
 	return newUser;
 }

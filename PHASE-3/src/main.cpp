@@ -357,9 +357,9 @@ int main(int argc, char** argv){
 		}	
 
 		// Handles any case where user inputs any operation other than the above conditionals
-		// else {
-		// 	cout << "Invalid input for operation. Please try again." << endl;
-		// }
+		else {
+			cout << "Invalid input for operation. Please try again." << endl;
+		}
 
 		// TO-DO: extensive testing
 		if (!transactionCode.empty()) {

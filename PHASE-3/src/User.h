@@ -8,6 +8,7 @@
 class User {
 	public:
 		std::string username;
+		std::string password;
 		std::string accountType;
 		float credit;
 
