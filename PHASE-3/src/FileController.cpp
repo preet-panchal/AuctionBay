@@ -186,6 +186,30 @@ void FileController::updateCredit(std::string username, float credit) {
 	outfile.close();
 }
 
+// Updates a users credit amount in the current users file
+void FileController::resetPassword(std::string username, std::string password) {
+	std::ifstream infile(currentUsersFile);
+	std::ofstream outfile;
+
+	std::vector<USER_RECORD> current_users;
+	USER_RECORD myUser;
+
+	while (infile >> myUser.username >> myUser.password >> myUser.accountType >> myUser.credit) {
+		if(username == myUser.username)
+			myUser.password = password;	
+		current_users.push_back(myUser);
+	}
+
+    outfile.open(currentUsersFile, std::ofstream::out | std::ofstream::trunc); // Clear the file to rewrite contents
+	outfile.close();
+
+	outfile.open(currentUsersFile, std::ios_base::app); // Rewrite contents to the file
+	for (int i = 0; i < current_users.size(); ++i) {
+		outfile << current_users[i].username << " " << current_users[i].password << " " << current_users[i].accountType << " " << current_users[i].credit << std::endl;
+	}
+	outfile.close();
+}
+
 // Adds an auction item to the available items file
 void FileController::addItem(ITEM_RECORD itemRecord) {
 	std::ofstream outfile;

@@ -9,7 +9,6 @@
 
 using namespace std;
 
-
 class AuctionSystem {	
 	public:
 		bool loggedIn; // States if a user is logged into the auction system (true/false)

@@ -61,7 +61,6 @@ std::string Encrypt(std::string password) {
 			password[i] = ch;
 		}
 	}
-	cout << "Encrypted password: " << password << endl;
 	return password;
 }
 
@@ -85,6 +84,5 @@ std::string Decrypt(std::string password) {
 			password[i] = ch;
 		}
 	}
-	cout << "Decrypted password: " << password << endl;
 	return password;
 }

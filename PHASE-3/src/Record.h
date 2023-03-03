@@ -19,6 +19,7 @@ const std::string ADVERTISE_TRANSACTION_CODE = "03";
 const std::string BID_TRANSACTION_CODE = "04";
 const std::string REFUND_TRANSACTION_CODE = "05";
 const std::string ADDCREDIT_TRANSACTION_CODE = "06";
+const std::string RESETPASSWORD_TRANSACTION_CODE = "07";
 
 // Minimums and Maximums
 const int MAX_CREDIT = 999999;

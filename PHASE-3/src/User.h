@@ -22,6 +22,7 @@ class User {
 
 		float AddCredit(float amount);
 		REFUND_RECORD Refund();	
+		std::string ResetPassword();
 
 		bool is_number(const std::string& s);
 		bool isFloat(const std::string& s);

@@ -47,6 +47,7 @@ int main(int argc, char** argv){
          << "- Add Credit (addcredit)\n"
          << "- List All Items (listallitems)\n"
 		 << "- List All Users (listallusers)\n"
+		 << "- Reset Password (resetpassword)\n"
          << "- Logout (logout)\n" << endl;
 
 	// Repeat until auction closes (exit command sets auction to closed)
@@ -207,7 +208,14 @@ int main(int argc, char** argv){
 											printf("Error: Bid amount must be 5%% greater than current highest bid.\n");
 											cin.ignore();
 										} else {
+											if (itemRecord.buyer != "N/A") {
+												USER_RECORD userRecord = fc.getUser(itemRecord.buyer);
+												userRecord.credit += itemRecord.highestBid;
+												fc.updateCredit(userRecord.username, userRecord.credit);
+											}
+											currentUser.credit -= stof(bidAmount);
 											itemRecord.highestBid = stof(bidAmount);
+											fc.updateCredit(currentUser.username, currentUser.credit);
 											fc.updateItemBid(itemRecord, currentUser.username);
 											printf("Bid of $%.2f successfully placed on %s.\n", stof(bidAmount), itemRecord.itemName.c_str());
 											
@@ -339,6 +347,16 @@ int main(int argc, char** argv){
 				cin.ignore();
 			}
 			//cin.ignore();
+		}
+
+		else if (command == "resetpassword") {
+			std::string password;
+			password = currentUser.ResetPassword();
+			if (password == currentUser.password) {
+				fc.resetPassword(currentUser.username, password); // Resets users password in the current users file
+				transactionCode = RESETPASSWORD_TRANSACTION_CODE;
+				transactionDetails = currentUser.toString();
+			}
 		}	
 
 		// User enters login operation - when already logged in (login02 test)

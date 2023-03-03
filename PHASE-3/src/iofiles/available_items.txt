@@ -1,3 +1,3 @@
 vicks user01 N/A 56 4
 airpods01 user01 user02 25 30
-fan user01 user02 14 17
+fan user01 user02 14 240

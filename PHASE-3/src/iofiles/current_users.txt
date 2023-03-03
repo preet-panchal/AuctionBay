@@ -1,5 +1,6 @@
 user01 teww AA 2907
-user02 teww FS 3223
+user02 teww FS 3000
 user03 teww BS 2100
 user04 teww SS 0
 testuser01 teww FS 999999
+testpass01 teww FS 0

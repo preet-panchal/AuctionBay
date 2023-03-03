@@ -24,6 +24,7 @@ class FileController {
 		void addUser(USER_RECORD newUser);
 		void deleteUser(std::string username);
 		void updateCredit(std::string username, float credit);
+		void resetPassword(std::string username, std::string password);
 
 		// Item file methods
 		void addItem(ITEM_RECORD itemRecord);

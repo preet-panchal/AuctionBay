@@ -24,3 +24,10 @@
 06 testuser01 FS 999999
 05 user02 user01 23
 05 user03 user01 70
+01 testpass01 teww FS 0
+07 user01 teww AA 2907
+07 testpass01 xiwx FS 0
+07 testpass01 teww FS 0
+07 testpass01 teww FS 0
+04 fan user01 14 100
+04 fan user01 14 240

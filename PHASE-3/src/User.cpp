@@ -9,7 +9,7 @@
 // Returns current user information as a string
 std::string User::toString(){
 	std::stringstream userStream;
-	userStream << username << " " << accountType << " " << credit;
+	userStream << username << " " << password << " " << accountType << " " << credit;
 	std::string userInfo = userStream.str();
 	return userInfo;
 }
@@ -38,7 +38,11 @@ USER_RECORD User::CreateAccount() {
 	std::printf("Enter a password: ");
 	std::cin >> password;
 	std::cin.ignore();
-	newUser.password = Encrypt(password);
+	if (password.length() > 15 || password.length() < 1) {
+		printf("Error: Password must be between 1-15 characters long.\n");
+	} else {
+		newUser.password = Encrypt(password);
+	}
 
 	return newUser;
 }
@@ -183,6 +187,23 @@ float User::AddCredit(float amount) {
 
 	return credit;
 	*/
+}
+
+std::string User::ResetPassword() {
+	std:string password;
+	std::printf("Enter a password: ");
+	std::cin >> password;
+	std::cin.ignore();
+	if (password.length() > 15 || password.length() < 1) {
+		printf("Error: Password must be between 1-15 characters long.\n");
+		password = password.empty();
+	} else {
+		password = Encrypt(password);
+		this->password = password;
+		printf("Successfully changed password!\n");
+	}
+
+	return password;
 }
 
 // Validate if input is a number
