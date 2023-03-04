@@ -1,6 +1,2 @@
-
-PHASE-2/src/FileController.o
-PHASE-2/src/main.o
-PHASE-2/src/auction_system
-PHASE-2/src/User.o
-PHASE-2/src/AuctionSystem.o
+*.o
+*.exe
