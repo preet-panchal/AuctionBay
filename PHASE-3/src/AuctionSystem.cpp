@@ -29,7 +29,7 @@ bool AuctionSystem::Login(USER_RECORD userRecord, User &currentUser) {
 		// Welcome user prompt
 		std::cout << "Hello " << currentUser.username << " (" << currentUser.accountType << ")!" << std::endl;
 	} else {
-		std::cout << "Error: Incorrect password.\n";
+		std::cout << "Error: Incorrect password.\n" << std::endl;
 	}
 
 	return loggedIn;

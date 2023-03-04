@@ -47,9 +47,9 @@ struct REFUND_RECORD {
 
 struct USER_RECORD {
     std::string username;
-	std::string password;
 	std::string accountType;
 	float credit = 0;
+	std::string password;
 };
 
 /* RECORD FUNCTIONS */
@@ -72,7 +72,7 @@ inline std::string recordToString(REFUND_RECORD refundRecord){
 // Overloads the recordToString function to accept a user record
 inline std::string recordToString(USER_RECORD userRecord){
     std::stringstream userStream;
-	userStream << userRecord.username << " " << userRecord.password << " " << userRecord.accountType << " " << userRecord.credit;
+	userStream << userRecord.username << " " << userRecord.accountType << " " << userRecord.credit << " " << userRecord.password;
 	std::string userInfo = userStream.str();
 	return userInfo;
 }

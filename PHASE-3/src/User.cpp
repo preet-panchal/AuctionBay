@@ -9,7 +9,7 @@
 // Returns current user information as a string
 std::string User::toString(){
 	std::stringstream userStream;
-	userStream << username << " " << password << " " << accountType << " " << credit;
+	userStream << username << " " << accountType << " " << credit << " " << password;
 	std::string userInfo = userStream.str();
 	return userInfo;
 }

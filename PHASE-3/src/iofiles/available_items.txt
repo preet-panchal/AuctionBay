@@ -1,3 +1,5 @@
 vicks user01 N/A 56 4
 airpods01 user01 user02 25 30
 fan user01 user02 14 240
+rubixcube user01 N/A 14 15
+lotion user01 N/A 10 5

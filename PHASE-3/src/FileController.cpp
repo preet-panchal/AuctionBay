@@ -27,16 +27,16 @@ USER_RECORD FileController::getUser(std::string lookupName) {
 
 	USER_RECORD userRecord;
 	std::string username;
-	std::string password;
 	std::string type;
 	float credit;
+	std::string password;
 
-	while (infile >> username >> password >> type >> credit) {
+	while (infile >> username >> type >> credit >> password) {
 		if (lookupName == username) { // If username in file matches lookup name then set user attributes to those in file
 			userRecord.username = lookupName;
-			userRecord.password = password;
 			userRecord.accountType = type;
 			userRecord.credit = credit;
+			userRecord.password = password;
 		}
 	}
 	return userRecord;
@@ -48,11 +48,11 @@ bool FileController::findUser(std::string lookupName) {
 
 	bool userFound = false;
 	std::string username;
-	std::string password;
 	std::string type;
 	float credit;
+	std::string password;
 
-	while (infile >> username >> password >> type >> credit) {
+	while (infile >> username >> type >> credit >> password) {
 		if (lookupName == username) {
 			userFound = true;	
 		}
@@ -107,9 +107,9 @@ void FileController::addUser(USER_RECORD newUser) {
 	std::ofstream outfile;
     outfile.open(currentUsersFile, std::ios_base::app);
     outfile << newUser.username << " " 
-			<< newUser.password << " "
 			<< newUser.accountType << " " 
-			<< newUser.credit << std::endl;
+			<< newUser.credit << " "
+			<< newUser.password << std::endl;
 }
 
 // Deletes a user and all of its associated items from the current users file and the available items file
@@ -121,7 +121,7 @@ void FileController::deleteUser(std::string username) {
 	std::vector<USER_RECORD> current_users;
 	USER_RECORD myUser;
 
-	while (infile >> myUser.username >> myUser.password >> myUser.accountType >> myUser.credit) {
+	while (infile >> myUser.username >> myUser.accountType >> myUser.credit >> myUser.password) {
 		if (username != myUser.username) {
 			current_users.push_back(myUser);
 		}
@@ -132,7 +132,7 @@ void FileController::deleteUser(std::string username) {
 
 	outfile.open(currentUsersFile, std::ios_base::app); // Rewrite contents to the file
 	for (int i = 0; i < current_users.size(); ++i) {
-		outfile << current_users[i].username << " " << current_users[i].password << " " << current_users[i].accountType << " " << current_users[i].credit << std::endl;
+		outfile << current_users[i].username << " " << current_users[i].accountType << " " << current_users[i].credit << " " << current_users[i].password << std::endl;
 	}
 	outfile.close();
 
@@ -170,7 +170,7 @@ void FileController::updateCredit(std::string username, float credit) {
 	std::vector<USER_RECORD> current_users;
 	USER_RECORD myUser;
 
-	while (infile >> myUser.username >> myUser.password >> myUser.accountType >> myUser.credit) {
+	while (infile >> myUser.username >> myUser.accountType >> myUser.credit >> myUser.password) {
 		if(username == myUser.username)
 			myUser.credit = credit;	
 		current_users.push_back(myUser);
@@ -181,7 +181,7 @@ void FileController::updateCredit(std::string username, float credit) {
 
 	outfile.open(currentUsersFile, std::ios_base::app); // Rewrite contents to the file
 	for (int i = 0; i < current_users.size(); ++i) {
-		outfile << current_users[i].username << " " << current_users[i].password << " " << current_users[i].accountType << " " << current_users[i].credit << std::endl;
+		outfile << current_users[i].username << " " << current_users[i].accountType << " " << current_users[i].credit << " " << current_users[i].password << std::endl;
 	}
 	outfile.close();
 }
@@ -194,7 +194,7 @@ void FileController::resetPassword(std::string username, std::string password) {
 	std::vector<USER_RECORD> current_users;
 	USER_RECORD myUser;
 
-	while (infile >> myUser.username >> myUser.password >> myUser.accountType >> myUser.credit) {
+	while (infile >> myUser.username >> myUser.accountType >> myUser.credit >> myUser.password) {
 		if(username == myUser.username)
 			myUser.password = password;	
 		current_users.push_back(myUser);
@@ -205,7 +205,7 @@ void FileController::resetPassword(std::string username, std::string password) {
 
 	outfile.open(currentUsersFile, std::ios_base::app); // Rewrite contents to the file
 	for (int i = 0; i < current_users.size(); ++i) {
-		outfile << current_users[i].username << " " << current_users[i].password << " " << current_users[i].accountType << " " << current_users[i].credit << std::endl;
+		outfile << current_users[i].username << " " << current_users[i].accountType << " " << current_users[i].credit << " " << current_users[i].password << std::endl;
 	}
 	outfile.close();
 }
@@ -256,7 +256,7 @@ void FileController::displayAvailableUsers() {
 	float credit;
 
 	std::printf("User Name: \t\t Account Type: \t Credit Balance:\n");
-	while (infile >> userName >> password >> accountType >> credit) {
+	while (infile >> userName >> accountType >> credit >> password) {
 		std::cout << std::setw(25) << std::left << userName << std::setw(16) << std::left << accountType << std::setw(16) << std::left << credit << std::endl;
 	}
 }

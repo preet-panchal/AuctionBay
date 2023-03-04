@@ -31,3 +31,11 @@
 07 testpass01 teww FS 0
 04 fan user01 14 100
 04 fan user01 14 240
+01_testuser03 xiwxteww03 SS 0
+01_testuser04 xiwxteww04 FS 0
+03_rubixcube user01 14 0
+01_testuser05_xiwxteww05 BS 0
+01_testuser06_xiwxteww06_AA_0
+03_lotion_user01_10_0
+02_testpass01_teww_FS_0
+01 testuser05_BS_0_xiwxteww05
