@@ -1,0 +1,22 @@
+Welcome to AuctionBay!
+--
+Here is a list of operations (what to input):
+- Login (login)
+- Create (create)
+- Delete (delete)
+- Advertise (advertise)
+- Bid (bid)
+- Refund (refund)
+- Add Credit (addcredit)
+- List All Items (listall)
+- Logout (logout)
+
+Enter operation:
+Enter username:
+Hello User01 (AA)!
+
+Enter operation:
+Invalid input for operation. Please try again.
+
+Enter operation:
+User01 successfully logged out.

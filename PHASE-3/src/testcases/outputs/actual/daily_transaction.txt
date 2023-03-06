@@ -1,0 +1,17 @@
+07 user01 AA 100 riateww
+06 user01 AA 110 teww
+03 wallet user01 99 0
+04 lamp user02 50 60
+01 user05 AA 0 teww
+02 user04 SS 100 teww
+03 wallet user01 99 0
+05 user01 user02 50
+07 user01 AA 100 riateww
+06 user01 AA 110 teww
+03 wallet user01 99 0
+04 lamp user02 50 60
+01 user05 AA 0 teww
+02 user04 SS 100 teww
+03 wallet user01 99 0
+05 user01 user02 50
+07 user01 AA 100 riateww

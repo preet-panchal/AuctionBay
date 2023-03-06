@@ -1,0 +1,29 @@
+--- ./../testcases/outputs/expected/bid/bid08.txt	2023-02-03 02:21:54
++++ ./../testcases/outputs/actual/bid/bid08.txt	2023-03-05 16:32:33
+@@ -13,14 +13,18 @@
+ 
+ Enter operation:
+ Enter username:
+-Hello fsuser01 (FS)!
+ 
++Error: This user does not exist in the user-accounts file.
+ Enter operation:
+-Enter item name:
+-Enter seller's username:
+-Current Highest Bid: $100.00
+-Enter bid amount:
+-Error: Your bid amount must be atleast 5% greater than current highest bid.
++Error: You must login first.
+ 
+ Enter operation:
+-fsuser01 successfully logged out.
+\ No newline at end of file
++Error: You must login first.
++
++Enter operation:
++Error: You must login first.
++
++Enter operation:
++Error: You must login first.
++
++Enter operation:

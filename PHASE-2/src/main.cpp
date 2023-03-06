@@ -54,12 +54,12 @@ int main(int argc, char** argv){
 		// Prompt user to log in (repeat until user is logged in)
 		while (!auctionSys.loggedIn) {
 			string userInput;
-			printf("Enter operation: ");
+			printf("Enter operation:\n");
 			getline(cin, userInput);
 
 			if (userInput == "login") {
 				string username;	
-				printf("Enter username: ");
+				printf("Enter username:\n");
 				getline(cin, username);
 
 				USER_RECORD userRecord = fc.getUser(username); // Search for username in the users file
@@ -77,7 +77,7 @@ int main(int argc, char** argv){
 		}
 
 		// 	Asks user for new input of operation everytime until they logout
-		printf("\nEnter operation: ");
+		printf("\nEnter operation:\n");
 		getline(cin, command);
 		transform(command.begin(), command.end(), command.begin(), ::tolower); // Transform command entered to lower-case
 		

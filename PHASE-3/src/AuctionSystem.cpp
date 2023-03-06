@@ -12,7 +12,7 @@ AuctionSystem::AuctionSystem(bool auctionStatus) {
 
 bool AuctionSystem::Login(USER_RECORD userRecord, User &currentUser) {
 	std::string password;
-	printf("Enter password: ");
+	printf("Enter password:\n");
 	std::cin >> password;
 	std::cin.ignore();
 

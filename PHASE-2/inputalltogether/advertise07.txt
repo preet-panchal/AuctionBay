@@ -1,0 +1,10 @@
+login
+admin01
+advertise
+item01
+25
+100
+bid
+item01
+admin01
+logout

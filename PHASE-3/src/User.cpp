@@ -15,31 +15,24 @@ std::string User::toString(){
 }
 
 USER_RECORD User::CreateAccount() {
-	bool userExists = false;	// Used to check if user already exists
 	USER_RECORD newUser;		// Initialize new USER_RECORD for newly created user
 
-	std::printf("Enter a username to create: ");
-	std::cin >> newUser.username;
-	if (newUser.username.length() > 15) {
-		newUser.accountType = "ER";
-		std::cin.ignore();
-		return newUser;
-	}
-
-	std::printf("Enter an user type: ");
+	std::printf("Enter a user type:\n");
 	std::cin >> newUser.accountType;
 	if (newUser.accountType != "AA" && newUser.accountType != "FS" && newUser.accountType != "BS" && newUser.accountType != "SS") {
+		printf("Error: Invalid user type. (Must be: AA, FS, BS or SS).\n");
 		newUser.accountType = "ER";
 		std::cin.ignore();
 		return newUser;
 	}
 
 	std:string password;
-	std::printf("Enter a password: ");
+	std::printf("Enter a password:\n");
 	std::cin >> password;
 	std::cin.ignore();
 	if (password.length() > 15 || password.length() < 1) {
-		printf("Error: Password must be between 1-15 characters long.\n");
+		printf("Error: Password be only 15 characters in max length.\n");
+		newUser.accountType = "ER";
 	} else {
 		newUser.password = Encrypt(password);
 	}
@@ -49,7 +42,7 @@ USER_RECORD User::CreateAccount() {
 
 std::string User::DeleteAccount() {
 	std::string username;
-	std::printf("Enter username to delete: ");
+	std::printf("Enter a username to delete:\n");
 	std::cin >> username;
 
 	return username;
@@ -60,6 +53,7 @@ ITEM_RECORD User::Advertise() {
 	std::string minBid;
 	std::string duration;
 
+/*
 	// User input for item name for advertise operation
 	std::printf("Enter the item name: ");
 	std::cin >> itemRecord.itemName;  
@@ -71,9 +65,10 @@ ITEM_RECORD User::Advertise() {
 	}
 
 	std::cin.clear();
+*/
 
 	// User input for minimum bid for advertise operation
-	std::printf("Enter the minimum bid ($): ");
+	std::printf("Enter the minimum bid ($):\n");
 	std::cin >> minBid;
 	if (is_number(minBid) == false) { // Checking if min bid amount is a number
 		itemRecord.duration = 999;
@@ -92,7 +87,7 @@ ITEM_RECORD User::Advertise() {
 	std::cin.clear();
 
 	// User input for duration for advertise operation
-	std::printf("Enter auction duration (in days): ");
+	std::printf("Enter auction duration (in days):\n");
 	std::cin >> duration;
 	if (is_number(duration) == false) { // Checking if duration is a number
 		itemRecord.duration = 999;
@@ -125,7 +120,7 @@ REFUND_RECORD User::Refund() {
 
 	// Asking user for inputs to run refund operation
 	std::string amount;
-	std::printf("Enter refund amount: ");
+	std::printf("Enter refund amount:\n");
 	std::cin >> amount; 
 	if (isFloat(amount)) {
 		if (stof(amount) <= 0) {
@@ -191,7 +186,7 @@ float User::AddCredit(float amount) {
 
 std::string User::ResetPassword() {
 	std:string password;
-	std::printf("Enter a password: ");
+	std::printf("Enter a password:\n");
 	std::cin >> password;
 	std::cin.ignore();
 	if (password.length() > 15 || password.length() < 1) {

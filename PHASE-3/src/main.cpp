@@ -56,12 +56,12 @@ int main(int argc, char** argv){
 		// Prompt user to log in (repeat until user is logged in)
 		while (!auctionSys.loggedIn) {
 			string userInput;
-			printf("Enter operation: ");
+			printf("Enter operation:\n");
 			getline(cin, userInput);
 
 			if (userInput == "login") {
 				string username;	
-				printf("Enter username: ");
+				printf("Enter username:\n");
 				getline(cin, username);
 
 				USER_RECORD userRecord = fc.getUser(username); // Search for username in the users file
@@ -78,36 +78,38 @@ int main(int argc, char** argv){
 		}
 
 		// 	Asks user for new input of operation everytime until they logout
-		printf("\nEnter operation: ");
+		printf("\nEnter operation:\n");
 		getline(cin, command);
 		transform(command.begin(), command.end(), command.begin(), ::tolower); // Transform command entered to lower-case
 		
 		// User enters Create operation - Create a new user account
 		if (command == "create") {
 			if (currentUser.accountType == ADMIN) {
-				USER_RECORD newUserRecord = currentUser.CreateAccount(); // Create a new user record
-				
-				if (newUserRecord.accountType != "ER") {                 // Validating user privilege, making sure it is not default
-					userFound = fc.findUser(newUserRecord.username); 	 // Check if user already exists
 
-					if (userFound) {
-						printf("Error: This username already exists in the user-accounts file.\n");
-					} else {
+				std:string username;
+				std::printf("Enter a username to create:\n");
+				std::cin >> username;
+
+				if (username.length() > 15) {
+					cout << "Error: Username must be only 15 characters in max length." << endl;
+					std::cin.ignore();
+				} else if (fc.findUser(username)) {
+					printf("Error: This username already exists in the user-accounts file.\n");
+					std::cin.ignore();
+				} else {
+					USER_RECORD newUserRecord = currentUser.CreateAccount(); // Create a new user record
+				
+					if (newUserRecord.accountType != "ER") {                 // Validating user privilege, making sure it is not default
+						newUserRecord.username = username;
 						fc.addUser(newUserRecord);			// Add the new user record to the current users file
 						printf("%s (%s) successfully created.\n", newUserRecord.username.c_str(), newUserRecord.accountType.c_str());
 						// Add create record to transaction file
 						transactionCode = CREATE_TRANSACTION_CODE;
 						transactionDetails = recordToString(newUserRecord);
 					}
-				} else {
-					if (newUserRecord.username.length() > 15) {
-						cout << "Error: Username must be only 15 characters in max length." << endl;
-					} else {
-						cout << "Error: Invalid user type. (Must be: AA, FS, BS or SS)." << endl;
-					}
 				}
 			} else {
-				cout << "Error: Only ADMIN has privileges for this operation." << endl;
+				cout << "Error: Only AA has privileges for this operation." << endl;
 			}
 		}	
 
@@ -141,18 +143,33 @@ int main(int argc, char** argv){
 			if (currentUser.accountType == BUY_STANDARD) { 		// Validating user privilege, making sure it is not a buy standard account
 				printf("Error: Only AA, FS, or SS have privileges for this operation.\n");
 			} else {
-				ITEM_RECORD itemRecord = currentUser.Advertise(); // Create a new item record
-			
-				if (itemRecord.duration != MAX_DURATION) {
-					itemRecord.seller = currentUser.username;	   // Set the seller name to the current user
-					itemRecord.buyer = "N/A";					   // Default buyer name
-					fc.addItem(itemRecord);					       // Add the new item record to the available items file
-					printf("%s successfully put up for auction for %d days.\n", itemRecord.itemName.c_str(), itemRecord.duration);
-
-					transactionCode = ADVERTISE_TRANSACTION_CODE;
-					transactionDetails = recordToString(itemRecord);
-				}  
+				// User input for item name for advertise operation
+				std::string itemName;
+				std::printf("Enter the item name:\n");
+				std::cin >> itemName;
 				cin.ignore();
+				// Checking if item name is valid
+				if (itemName.length() > 25 || itemName.length() < 1) {
+					std::printf("Error: Item name must be between 1-25 characters in length.\n");
+					std::cin.clear();
+				} else if (fc.findItem(itemName)) {
+					printf("Error: %s already exists in available-items file.\n", itemName.c_str());
+					std::cin.clear();
+				} else {
+					ITEM_RECORD itemRecord = currentUser.Advertise();
+
+					if (itemRecord.duration != MAX_DURATION) {
+						itemRecord.itemName = itemName;
+						itemRecord.seller = currentUser.username;	   // Set the seller name to the current user
+						itemRecord.buyer = "N/A";					   // Default buyer name
+						fc.addItem(itemRecord);					       // Add the new item record to the available items file
+						printf("%s successfully put up for auction for %d days.\n", itemRecord.itemName.c_str(), itemRecord.duration);
+
+						transactionCode = ADVERTISE_TRANSACTION_CODE;
+						transactionDetails = recordToString(itemRecord);
+					}  
+					cin.ignore();
+				}
 			} 
 		}	
 
@@ -165,14 +182,14 @@ int main(int argc, char** argv){
 				string seller; 
 
 				// ITEM_RECORD itemRecord = currentUser.Bid(); 	  // Create item record for item to bid on
-				std::printf("Enter item name: ");
+				std::printf("Enter item name:\n");
 				std::cin >> itemName;
 
 				if (!fc.findItem(itemName)) {
 					printf("Error: %s does not exist in available-items file.\n", itemName.c_str());
 					cin.ignore();
 				} else {
-					printf("Enter seller's username: ");
+					printf("Enter seller's username:\n");
 					cin >> seller;
 					if (!fc.findUser(seller)) {
 						printf("Error: This username does not exist in the user-accounts file.\n"); 
@@ -191,7 +208,7 @@ int main(int argc, char** argv){
 								if (highestBid > -1) {
 									string bidAmount;
 									cout << "Current Highest Bid: $" << highestBid << endl;
-									printf("Enter new bid amount: ");
+									printf("Enter new bid amount:\n");
 									cin >> bidAmount;
 									
 									if (!currentUser.is_number(bidAmount)) {
@@ -200,13 +217,13 @@ int main(int argc, char** argv){
 									} else {
 										if (stof(bidAmount) > currentUser.credit) {
 											printf("Error: You do not have enough credits to complete this bid.\n");
-											cin.ignore();
+											//cin.ignore();
 										} else if (currentUser.accountType == ADMIN && stof(bidAmount) <= highestBid) {
 											printf("Error: Bid amount must be greater than current highest bid.\n");
-											cin.ignore();
+											// cin.ignore();
 										} else if (currentUser.accountType != ADMIN && stof(bidAmount) <= (highestBid*0.05 + highestBid)) {
 											printf("Error: Bid amount must be 5%% greater than current highest bid.\n");
-											cin.ignore();
+											//cin.ignore();
 										} else {
 											if (itemRecord.buyer != "N/A") {
 												USER_RECORD userRecord = fc.getUser(itemRecord.buyer);
@@ -248,19 +265,19 @@ int main(int argc, char** argv){
 		else if (command == "refund") {
 			// Validating user privilege, making sure it is an admin
 			if (currentUser.accountType == FULL_STANDARD || currentUser.accountType == BUY_STANDARD || currentUser.accountType == SELL_STANDARD) {
-				printf("Error: Only AA has privilages for this operation.\n");
+				printf("Error: Only AA has privileges for this operation.\n");
 			} else {
 				REFUND_RECORD refundRecord = currentUser.Refund();	// Create refund record for buyer to get refund from seller
 
 				if (refundRecord.amount > 0) {
-					std::printf("Enter buyer's username: ");
+					std::printf("Enter buyer's username:\n");
 					std::cin >> refundRecord.buyer;
 					// check if buyer username exists
 					if (!fc.findUser(refundRecord.buyer)) {
 						printf("Error: This username does not exist in the user-accounts file.\n"); // TO-DO: fix error
 					} else {
 						std::cin.clear();
-						std::printf("Enter seller's username: ");
+						std::printf("Enter seller's username:\n");
 						std::cin >> refundRecord.seller;
 						// check if seller username exists
 						if (!fc.findUser(refundRecord.seller)) {
@@ -280,7 +297,7 @@ int main(int argc, char** argv){
 								fc.updateCredit(buyerRecord.username, buyerRecord.credit);   // Update the buyers credit record
 								fc.updateCredit(sellerRecord.username, sellerRecord.credit); // Update the sellers credit record
 
-								printf("\n$%.2f refunded from %s to %s", refundRecord.amount, refundRecord.seller.c_str(), refundRecord.buyer.c_str());
+								printf("$%.2f refunded from %s to %s\n", refundRecord.amount, refundRecord.seller.c_str(), refundRecord.buyer.c_str());
 								transactionCode = REFUND_TRANSACTION_CODE;
 								transactionDetails = recordToString(refundRecord);
 							}
@@ -295,18 +312,19 @@ int main(int argc, char** argv){
 		else if (command == "addcredit") {
 			printf("Current credit balance for %s: $%.2f\n", currentUser.username.c_str(), currentUser.credit); 
 			std::string amount;	
-			std::cout << "Enter the credit amount to add: ";
+			std::cout << "Enter the credit amount to add:\n";
 			std::cin >> amount;
 			if (!currentUser.isFloat(amount)) {
 				//if (!currentUser.)
 				printf("Error: Credit amount must be a number.\n");
+				cin.ignore();
 			} else {
 				if (stof(amount) > MAX_CREDIT_ADD || stof(amount) < 1) {
 					printf("Error: Invalid input for credit. Enter a number between 1-1000.\n");
 				} else {
 					if (currentUser.accountType == ADMIN) {
 						std::string username;
-						std::cout << "Enter the username to add credit to: ";
+						std::cout << "Enter the username to add credit to:\n";
 						std::cin >> username;
 						if (!fc.findUser(username)) {
 							printf("Error: This username does not exist in the user-accounts file.\n");

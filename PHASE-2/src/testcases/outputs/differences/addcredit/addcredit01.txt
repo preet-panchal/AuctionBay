@@ -1,0 +1,24 @@
+--- ./../testcases/outputs/expected/addcredit/addcredit01.txt	2023-02-03 00:25:47
++++ ./../testcases/outputs/actual/addcredit/addcredit01.txt	2023-03-05 16:32:32
+@@ -13,12 +13,15 @@
+ 
+ Enter operation:
+ Enter username:
+-Hello admin01 (AA)!
+ 
++Error: This user does not exist in the user-accounts file.
+ Enter operation:
+-Enter the credit amount to add: 
+-Enter the username to add the credit to:
+-Error: The user does not exist in the user-accounts file.
++Error: You must login first.
+ 
+ Enter operation:
+-admin01 successfully logged out.
+\ No newline at end of file
++Error: You must login first.
++
++Enter operation:
++Error: You must login first.
++
++Enter operation:

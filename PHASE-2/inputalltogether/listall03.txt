@@ -1,0 +1,9 @@
+login
+newuser03
+listall
+advertise
+item03
+12
+100
+listall
+logout

@@ -1,4 +1,0 @@
-user01 AA 2907 teww
-user02 FS 3000 teww
-user03 BS 2100 teww
-user04 SS 0 teww

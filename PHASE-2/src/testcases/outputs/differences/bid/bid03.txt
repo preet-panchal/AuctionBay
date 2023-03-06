@@ -1,0 +1,24 @@
+--- ./../testcases/outputs/expected/bid/bid03.txt	2023-02-03 02:17:58
++++ ./../testcases/outputs/actual/bid/bid03.txt	2023-03-05 16:32:33
+@@ -13,12 +13,15 @@
+ 
+ Enter operation:
+ Enter username:
+-Hello admin01 (AA)!
+ 
+-Enter operation:
+-Enter item name:
+-Enter seller's username:
+ Error: This user does not exist in the user-accounts file.
++Enter operation:
++Error: You must login first.
+ 
+ Enter operation:
+-admin01 successfully logged out.
+\ No newline at end of file
++Error: You must login first.
++
++Enter operation:
++Error: You must login first.
++
++Enter operation:

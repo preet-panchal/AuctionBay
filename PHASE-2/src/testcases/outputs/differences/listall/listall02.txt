@@ -1,0 +1,67 @@
+--- ./../testcases/outputs/expected/listall/listall02.txt	2023-02-03 01:25:22
++++ ./../testcases/outputs/actual/listall/listall02.txt	2023-03-05 16:32:33
+@@ -1,32 +1,32 @@
+-Welcome to AuctionBay!
+---
+-Here is a list of operations (what to input):
+-- Login (login)
+-- Create (create)
+-- Delete (delete)
+-- Advertise (advertise)
+-- Bid (bid)
+-- Refund (refund)
+-- Add Credit (addcredit)
+-- List All Items (listall)
+-- Logout (logout)
+-
+-Enter operation:
+-Enter username: 
+-Hello admin01 (AA)!
+-
+-Enter operation:
+-Item Name:      Item Seller:        Current Highest Item Bid ($):       Auction Days Left: 
+-item01          ssuser01            15.00                               14
+-item02          newuser04           20.00                               28
+-
+-Enter operation:
+-Enter the username to delete: 
+-newuser04 successfully deleted.
+-
+-Enter operation:
+-Item Name:      Item Seller:        Current Highest Item Bid ($):       Auction Days Left: 
+-item01          ssuser01            15.00                               14
+-
+-Enter operation:
+-admin01 successfully logged out.
++Welcome to AuctionBay!
++--
++Here is a list of operations (what to input):
++- Login (login)
++- Create (create)
++- Delete (delete)
++- Advertise (advertise)
++- Bid (bid)
++- Refund (refund)
++- Add Credit (addcredit)
++- List All Items (listall)
++- Logout (logout)
++
++Enter operation:
++Error: You must login first.
++
++Enter operation:
++Error: You must login first.
++
++Enter operation:
++Error: You must login first.
++
++Enter operation:
++Error: You must login first.
++
++Enter operation:
++Error: You must login first.
++
++Enter operation:
++Error: You must login first.
++
++Enter operation:

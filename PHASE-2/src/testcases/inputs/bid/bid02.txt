@@ -1,0 +1,5 @@
+login
+admin01
+bid
+item00
+logout

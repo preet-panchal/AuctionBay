@@ -1,0 +1,20 @@
+--- ./../testcases/outputs/expected/delete/delete02.txt	2023-02-02 23:21:55
++++ ./../testcases/outputs/actual/delete/delete02.txt	2023-03-05 16:32:33
+@@ -13,11 +13,12 @@
+ 
+ Enter operation:
+ Enter username:
+-Hello admin01 (AA)!
+ 
++Error: This user does not exist in the user-accounts file.
+ Enter operation:
+-Enter the username to delete: 
+-Error: You cannot delete your own user.
++Error: You must login first.
+ 
+ Enter operation:
+-admin01 successfully logged out.
+\ No newline at end of file
++Error: You must login first.
++
++Enter operation:

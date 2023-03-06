@@ -1,0 +1,54 @@
+--- ./../testcases/outputs/expected/addcredit/addcredit04.txt	2023-02-03 00:25:47
++++ ./../testcases/outputs/actual/addcredit/addcredit04.txt	2023-03-05 16:32:32
+@@ -1,24 +1,26 @@
+-Welcome to AuctionBay!
+---
+-Here is a list of operations (what to input):
+-- Login (login)
+-- Create (create)
+-- Delete (delete)
+-- Advertise (advertise)
+-- Bid (bid)
+-- Refund (refund)
+-- Add Credit (addcredit)
+-- List All Items (listall)
+-- Logout (logout)
+-
+-Enter operation:
+-Enter username:
+-Hello bsuser01 (BS)!
+-
+-Enter operation:
+-Current credit balance for bsuser01: $10.00
+-Enter the credit amount to add:
+-New credit balance for bsuser01: $20.00
+-
+-Enter operation:
+-admin01 successfully logged out.
+\ No newline at end of file
++Welcome to AuctionBay!
++--
++Here is a list of operations (what to input):
++- Login (login)
++- Create (create)
++- Delete (delete)
++- Advertise (advertise)
++- Bid (bid)
++- Refund (refund)
++- Add Credit (addcredit)
++- List All Items (listall)
++- Logout (logout)
++
++Enter operation:
++Error: You must login first.
++
++Enter operation:
++Error: You must login first.
++
++Enter operation:
++Error: You must login first.
++
++Enter operation:
++Error: You must login first.
++
++Enter operation:

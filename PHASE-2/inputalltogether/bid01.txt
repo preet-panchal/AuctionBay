@@ -1,0 +1,4 @@
+login
+ssuser01
+bid
+logout

@@ -1,0 +1,43 @@
+--- ./../testcases/outputs/expected/listall/listall03.txt	2023-02-03 01:24:43
++++ ./../testcases/outputs/actual/listall/listall03.txt	2023-03-05 16:32:33
+@@ -12,25 +12,25 @@
+ - Logout (logout)
+ 
+ Enter operation:
+-Enter username: 
+-Hello newuser03 (BS)!
++Enter username:
+ 
++Error: This user does not exist in the user-accounts file.
+ Enter operation:
+-Item Name:      Item Seller:        Current Highest Item Bid ($):       Auction Days Left: 
+-item01          ssuser01            15.00                               14
+-item02          newuser04           20.00                               28
++Error: You must login first.
+ 
+ Enter operation:
+-Enter the item name:
+-Enter the minimum bid ($):
+-Enter auction duration (in days):
+-item03 successfully put up for auction for 100 days.
++Error: You must login first.
+ 
+ Enter operation:
+-Item Name:      Item Seller:        Current Highest Item Bid ($):       Auction Days Left: 
+-item01          ssuser01            15.00                               14
+-item02          newuser04           20.00                               28
+-item03          newuser03           12.00                               100
++Error: You must login first.
+ 
+ Enter operation:
+-newuser03 successfully logged out.
+\ No newline at end of file
++Error: You must login first.
++
++Enter operation:
++Error: You must login first.
++
++Enter operation:
++Error: You must login first.
++
++Enter operation:
