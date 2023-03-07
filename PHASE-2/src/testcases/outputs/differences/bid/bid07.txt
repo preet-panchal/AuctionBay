@@ -1,5 +1,5 @@
 --- ./../testcases/outputs/expected/bid/bid07.txt	2023-02-03 02:21:47
-+++ ./../testcases/outputs/actual/bid/bid07.txt	2023-03-05 16:32:33
++++ ./../testcases/outputs/actual/bid/bid07.txt	2023-03-06 15:53:07
 @@ -13,14 +13,18 @@
  
  Enter operation:

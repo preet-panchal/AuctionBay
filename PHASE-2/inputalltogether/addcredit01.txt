@@ -1,6 +1,0 @@
-login
-admin01 
-addcredit
-200
-adminuser2023
-logout

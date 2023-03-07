@@ -17,9 +17,9 @@ USER_RECORD User::CreateAccount() {
 	bool userExists = false;	// Used to check if user already exists
 	USER_RECORD newUser;		// Initialize new USER_RECORD for newly created user
 
-	std::printf("Enter a username to create: ");
+	std::printf("Enter a username to create:\n");
 	std::cin >> newUser.username;
-	std::printf("Enter an user type:");
+	std::printf("Enter an user type:\n");
 	std::cin >> newUser.accountType;
 	if (newUser.username.length() > 15){
 		newUser.username = "Error: Username must be only 15 characters in max length.\n";
@@ -36,7 +36,7 @@ USER_RECORD User::CreateAccount() {
 
 std::string User::DeleteAccount() {
 	std::string username;
-	std::printf("Enter username to delete: ");
+	std::printf("Enter username to delete:\n");
 	std::cin >> username;
 
 	return username;
@@ -47,7 +47,7 @@ ITEM_RECORD User::Advertise() {
 	std::string minBid;
 	std::string duration;
 
-	std::printf("Enter the item name: ");
+	std::printf("Enter the item name:\n");
 	std::cin >> itemRecord.itemName;
 	// TO-DO: fix error
 	if (itemRecord.itemName.length() > 25 || itemRecord.itemName.length() < 1) {
@@ -57,48 +57,41 @@ ITEM_RECORD User::Advertise() {
 	}
 	std::cin.clear();
 
-	std::printf("Enter the minimum bid ($): ");
-	std::cin >> itemRecord.minBid;
-	// TO-DO: fix error
-	if (itemRecord.minBid > 999.99 || itemRecord.minBid < 0) { 
+	// User input for minimum bid for advertise operation
+	std::printf("Enter the minimum bid ($):\n");
+	std::cin >> minBid;
+	if (is_number(minBid) == false) { // Checking if min bid amount is a number
 		itemRecord.duration = 999;
-		std::printf("Error: Minimum bid amount must be betwceen 0-999.99.\n");
-		return itemRecord;
-	} 
-	// if (is_number(itemRecord.minBid) == false) {
-	// 	itemRecord.duration = 999;
-	// 	std::printf("Error: Minimum bid amount must be a number.\n");
-	// 	return itemRecord; 
-	// } else {
-	// 	if (itemRecord.minBid > 999.99 || itemRecord.minBid < 0) { 
-	// 		itemRecord.duration = 999;
-	// 		std::printf("Error: Minimum bid amount must be betwceen 0-999.99.\n");
-	// 		return itemRecord;
-	// 	} 
-	// 	itemRecord.minBid = std::stoi(minBid);
-	// }
+		std::printf("Error: Minimum bid amount must be a number.\n");
+		return itemRecord; 
+	} else { // Checking if min bid amount is valid
+		if (std::stoi(minBid) > 999.99 || std::stoi(minBid) < 0) { 
+			itemRecord.duration = 999;
+			std::printf("Error: Minimum bid amount must be betwceen 0-999.99.\n");
+			return itemRecord;
+		} else {
+			itemRecord.minBid = std::stoi(minBid);
+		}
+	}
+	
 	std::cin.clear();
 
-	std::printf("Enter auction duration (in days): ");
-	std::cin >> itemRecord.duration;
-	// TO-DO: fix error
-	if (itemRecord.duration > 100 || itemRecord.duration < 1 ) {
+	// User input for duration for advertise operation
+	std::printf("Enter auction duration (in days):\n");
+	std::cin >> duration;
+	if (is_number(duration) == false) { // Checking if duration is a number
 		itemRecord.duration = 999;
-		std::printf("Error: Auction duration must be between 1-100 days.\n");
-		return itemRecord;
-	}   
-	// if (is_number(itemRecord.duration) == false) {
-	// 	itemRecord.duration = 999;
-	// 	std::printf("Error: Auction duration must be a number.\n");
-	// 	return itemRecord; 
-	// } else {
-	// 	if (itemRecord.duration > 100 || itemRecord.duration < 1 ) {
-	// 		itemRecord.duration = 999;
-	// 		std::printf("Error: Auction duration must be between 1-100 days.\n");
-	// 		return itemRecord;
-	// 	}   
-	// 	itemRecord.duration = std::stoi(duration);
-	// }
+		std::printf("Error: Duration must be a number.\n");
+		return itemRecord; 
+	} else { // Checking if duration is valid
+		if (std::stoi(duration) > 100 || std::stoi(duration) < 1) { 
+			itemRecord.duration = 999;
+			std::printf("Error: Auction duration must be between 1-100 days.\n");
+			return itemRecord;
+		} else {
+			itemRecord.duration = std::stoi(duration);
+		}
+	}
 
 	return itemRecord;
 }
@@ -106,7 +99,7 @@ ITEM_RECORD User::Advertise() {
 // TO-DO: addcredit does not function as intended
 float User::AddCredit() {
 	std::string amount;	
-	std::cout << "Enter the credit amount to add: ";
+	std::cout << "Enter the credit amount to add:\n";
 	std::cin >> amount;
 
 	std::stringstream sstr(amount);
@@ -140,19 +133,12 @@ ITEM_RECORD User::Bid() {
 	ITEM_RECORD itemRecord;
 	std::string duration;
 
-	std::printf("Enter item name: ");
+	std::printf("Enter item name:\n");
 	std::cin >> itemRecord.itemName;
 	// std::printf("\nEnter number of days to auction: ");
 	// std::cin >> duration;
-	std::printf("Enter seller's username: ");
+	std::printf("Enter seller's username:\n");
 	std::cin >> itemRecord.seller;
-
-	// if(is_number(duration) == false){
-	// 	std::printf("\nError - Auction Duration must be a number.");
-	// 	itemRecord.duration = -1;
-	// }else{
-	// 	itemRecord.duration = stoi(duration);
-	// }
 
 	return itemRecord;
 }
@@ -162,13 +148,13 @@ REFUND_RECORD User::Refund() {
 
 	// Asking user for inputs to run refund operation
 	std::string amount;
-	std::printf("Enter buyer's username: ");
+	std::printf("Enter buyer's username:\n");
 	std::cin >> refundRecord.buyer;
 	std::cin.clear();
-	std::printf("Enter seller's username: ");
+	std::printf("Enter seller's username:\n");
 	std::cin >> refundRecord.seller;
 	std::cin.clear();
-	std::printf("Enter refund amount: ");
+	std::printf("Enter refund amount:\n");
 	std::cin >> amount;
 
 	std::stringstream sstr(amount);

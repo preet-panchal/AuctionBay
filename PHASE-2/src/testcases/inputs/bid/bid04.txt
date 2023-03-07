@@ -1,7 +1,7 @@
 login
-admin01
+User01
 bid
 item01
-user01
+User01
 ten
 logout

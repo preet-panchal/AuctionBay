@@ -1,7 +1,0 @@
-login
-admin01
-listall
-delete
-newuser04
-listall
-logout

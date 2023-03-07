@@ -13,10 +13,10 @@ Here is a list of operations (what to input):
 
 Enter operation:
 Enter username:
-Hello bsuser01 (BS)!:
+Hello User03 (BS)!
 
 Enter operation:
 Error: Only AA, FS, or SS have privileges for this operation.
 
 Enter operation:
-bsuser01 successfully logged out.
+User03 successfully logged out.

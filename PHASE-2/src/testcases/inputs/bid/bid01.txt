@@ -1,4 +1,4 @@
 login
-ssuser01
+User04
 bid
 logout

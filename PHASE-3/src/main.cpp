@@ -217,13 +217,10 @@ int main(int argc, char** argv){
 									} else {
 										if (stof(bidAmount) > currentUser.credit) {
 											printf("Error: You do not have enough credits to complete this bid.\n");
-											//cin.ignore();
 										} else if (currentUser.accountType == ADMIN && stof(bidAmount) <= highestBid) {
 											printf("Error: Bid amount must be greater than current highest bid.\n");
-											// cin.ignore();
 										} else if (currentUser.accountType != ADMIN && stof(bidAmount) <= (highestBid*0.05 + highestBid)) {
 											printf("Error: Bid amount must be 5%% greater than current highest bid.\n");
-											//cin.ignore();
 										} else {
 											if (itemRecord.buyer != "N/A") {
 												USER_RECORD userRecord = fc.getUser(itemRecord.buyer);
@@ -315,7 +312,6 @@ int main(int argc, char** argv){
 			std::cout << "Enter the credit amount to add:\n";
 			std::cin >> amount;
 			if (!currentUser.isFloat(amount)) {
-				//if (!currentUser.)
 				printf("Error: Credit amount must be a number.\n");
 				cin.ignore();
 			} else {
@@ -364,7 +360,6 @@ int main(int argc, char** argv){
 				}
 				cin.ignore();
 			}
-			//cin.ignore();
 		}
 
 		else if (command == "resetpassword") {
@@ -397,7 +392,7 @@ int main(int argc, char** argv){
 			cout << "Invalid input for operation. Please try again." << endl;
 		}
 
-		// TO-DO: extensive testing
+		// print to daily transaction file
 		if (!transactionCode.empty()) {
 			fc.logTransaction(transactionCode, transactionDetails); // Log all daily transactions
 		}

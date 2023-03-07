@@ -1,6 +1,5 @@
 login
-admin01 
+User01
 addcredit
-200
 adminuser2023
 logout

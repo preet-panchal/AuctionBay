@@ -1,4 +1,0 @@
-login
-bsuser01
-advertise
-logout

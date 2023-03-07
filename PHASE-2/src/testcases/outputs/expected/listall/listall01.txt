@@ -12,13 +12,15 @@ Here is a list of operations (what to input):
 - Logout (logout)
 
 Enter operation:
-Enter username: 
-Hello admin01 (AA)!
+Enter username:
+Hello User01 (AA)!
 
 Enter operation:
-Item Name:      Item Seller:        Current Highest Item Bid ($):       Auction Days Left: 
-item01          ssuser01            15.00                               14
-item02          newuser04           20.00                               28
+Item Name: 	 Item Seller: 	 Current Bid: 	 Auction Days Left:
+item01 	 User01 	 80.00 	 80
+item01 	 User01 	 25.00 	 100
+item01 	 User01 	 25.00 	 100
+item01 	 User01 	 26.00 	 100
 
 Enter operation:
-admin01 successfully logged out.
+User01 successfully logged out.

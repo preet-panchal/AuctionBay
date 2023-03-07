@@ -1,5 +1,5 @@
---- ./../testcases/outputs/expected/delete/delete04.txt	2023-02-02 23:21:55
-+++ ./../testcases/outputs/actual/delete/delete04.txt	2023-03-05 16:32:33
+--- ./../testcases/outputs/expected/delete/delete04.txt	2023-03-06 14:26:59
++++ ./../testcases/outputs/actual/delete/delete04.txt	2023-03-06 15:53:07
 @@ -1,23 +1,26 @@
 -Welcome to AuctionBay!
 ---
@@ -16,15 +16,14 @@
 -
 -Enter operation:
 -Enter username:
--Hello admin01 (AA)!
+-Hello User01 (AA)!
 -
 -Enter operation:
--Enter the username to delete: 
--newuser06 successfully deleted.
+-Enter username to delete:
+-User04 successfully deleted.
 -
 -Enter operation:
--admin01 successfully logged out.
-\ No newline at end of file
+-User01 successfully logged out.
 +Welcome to AuctionBay!
 +--
 +Here is a list of operations (what to input):

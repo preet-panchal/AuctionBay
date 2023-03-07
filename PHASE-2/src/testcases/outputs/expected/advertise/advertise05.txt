@@ -13,11 +13,11 @@ Here is a list of operations (what to input):
 
 Enter operation:
 Enter username:
-Hello admin01 (AA)!:
+Hello User01 (AA)!
 
 Enter operation:
 Enter the item name:
-Error: Item name must be only 25 characters in max length. 
+Error: Item name must be between 1-25 characters in length.
 
 Enter operation:
-admin01 successfully logged out.
+User01 successfully logged out.

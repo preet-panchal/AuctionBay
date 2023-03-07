@@ -1,9 +1,9 @@
 login
-newuser03
+User01
 listall
 advertise
 item03
-12
-100
+30
+30
 listall
 logout

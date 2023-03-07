@@ -1,16 +1,11 @@
---- ./../testcases/outputs/expected/delete/delete01.txt	2023-02-03 01:32:50
-+++ ./../testcases/outputs/actual/delete/delete01.txt	2023-03-05 16:32:33
-@@ -13,10 +13,9 @@
+--- ./../testcases/outputs/expected/delete/delete01.txt	2023-03-06 14:23:27
++++ ./../testcases/outputs/actual/delete/delete01.txt	2023-03-06 15:53:07
+@@ -16,7 +16,7 @@
+ Hello User02 (FS)!
  
- Enter operation:
- Enter username:
--Hello fsuser01 (FS)!
- 
-+Error: This user does not exist in the user-accounts file.
  Enter operation:
 -Error: Only admin has privileges for this operation.
-+Error: You must login first.
++Invalid input for operation. Please try again.
  
  Enter operation:
--fsuser01 successfully logged out.
-\ No newline at end of file
+ User02 successfully logged out.

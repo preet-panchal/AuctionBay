@@ -13,12 +13,13 @@ Here is a list of operations (what to input):
 
 Enter operation:
 Enter username:
-Hello admin (AA)!
+Hello User01 (AA)!
 
 Enter operation:
 Enter buyer's username:
 Enter seller's username:
-Error: This user does not exist in the user-accounts file.
+Enter refund amount:
+Error - Username pair not found.
 
 Enter operation:
-admin01 successfully logged out.
+User01 successfully logged out.

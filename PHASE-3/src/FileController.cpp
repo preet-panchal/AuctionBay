@@ -236,11 +236,6 @@ void FileController::displayAvailableItems() {
 
 	std::printf("Item Name: \t\t Item Seller: \t Highest Bidder: \t Highest Bid: \t Auction Days Left:\n");
 	while (infile >> itemName >> seller >> buyer >> duration >> highestBid) {
-		// std::cout << "Item name: " << itemName 
-		// 		  << " | Seller: " << seller 
-		// 		  << " | Bid: " << highestBid 
-		// 		  << " | Duration:" << duration << std::endl;
-		// std::printf("%s \t\t %s \t\t %.2f \t\t %d\n", itemName.c_str(), seller.c_str(), highestBid, duration);
 		std::cout << std::setw(25) << std::left << itemName << std::setw(16) << std::left << seller << std::setw(24) << std::left << buyer << std::setw(16) << std::left << highestBid << duration << std::endl;
 	}
 }
@@ -294,7 +289,6 @@ void FileController::updateItemBid(ITEM_RECORD itemRecord, std::string buyer) {
 		if (itemRecord.itemName == item.itemName && itemRecord.seller == item.seller && itemRecord.duration == item.duration) {
 			item.highestBid = itemRecord.highestBid;	
 			item.buyer = buyer;
-			// std::cout << item.buyer << " " << item.highestBid<< std::endl;
 		}
 		current_items.push_back(item);
 	}

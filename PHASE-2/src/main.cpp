@@ -159,7 +159,7 @@ int main(int argc, char** argv){
 					if (highestBid > -1) {
 						string amount;
 						cout << "Current Highest Bid: $" << highestBid << endl;
-						printf("Enter new bid amount: ");
+						printf("Enter new bid amount:\n");
 						cin >> amount;
 
 						std::stringstream sstr(amount);
@@ -239,7 +239,7 @@ int main(int argc, char** argv){
 		else if (command == "addcredit") {
 			std::string username;
 			if (currentUser.accountType == ADMIN) {
-				std::cout << "Enter the username to add credit to: ";
+				std::cout << "Enter the username to add credit to:\n";
 				std::cin >> username;
 			} else {
 				username = currentUser.username;

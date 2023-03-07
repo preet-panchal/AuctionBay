@@ -1,6 +1,0 @@
-login
-admin01
-bid
-Item01
-user00
-logout

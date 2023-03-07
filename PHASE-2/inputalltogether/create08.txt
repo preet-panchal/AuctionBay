@@ -1,7 +1,0 @@
-login
-admin01
-create
-newuser06
-AA
-10
-logout

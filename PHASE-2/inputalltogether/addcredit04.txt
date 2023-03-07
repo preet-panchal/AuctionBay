@@ -1,5 +1,0 @@
-login
-bsuser01 
-addcredit
-10
-logout

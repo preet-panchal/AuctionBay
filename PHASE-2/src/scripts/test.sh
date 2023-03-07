@@ -18,6 +18,12 @@ AVAIL_ITEMS=../iofiles/available_items.txt
 GRAY='\033[0;37m';
 NC='\033[0m';
 
+cd .. 
+make clean
+# print variable on a screen
+make
+cd ./scripts
+
 #Remove previous test files
 for folder in $TEST_FILES_LOC/*
 do 
@@ -28,7 +34,7 @@ done
 truncate -s 0 $CURRENT_USERS $AVAIL_ITEMS
 
 #Fill current users file with preset users to meet pre-conditions
-printf "User01 AA 0\nUser02 FS 0\nUser03 BS 0\nUser04 SS 0" >> $CURRENT_USERS
+printf "User01 AA 0\nUser02 FS 0\nUser03 BS 0\nUser04 SS 0\n" >> $CURRENT_USERS
 	
 #Iterate through all of the files specified in the 'FILES' variable
 for folder in $INPUT_FOLDERS

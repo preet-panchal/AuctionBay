@@ -1,5 +1,0 @@
-login
-admin01
-advertise
-ItemThatHasAVeryVeryVeryVeryVeryVeryVeryLongName
-logout

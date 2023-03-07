@@ -1,18 +1,16 @@
---- ./../testcases/outputs/expected/login/login03.txt	2023-02-02 21:42:22
-+++ ./../testcases/outputs/actual/login/login03.txt	2023-03-05 16:32:33
-@@ -12,11 +12,10 @@
+--- ./../testcases/outputs/expected/login/login03.txt	2023-03-06 13:18:56
++++ ./../testcases/outputs/actual/login/login03.txt	2023-03-06 15:53:07
+@@ -12,11 +12,11 @@
  - Logout (logout)
  
  Enter operation:
 -Enter username: 
--Hello bsuser01 (BS)!
 +Enter username:
+ Hello User03 (BS)!
  
-+Error: This user does not exist in the user-accounts file.
  Enter operation:
 -Error: Only admin has privilages for this operation.
-+Error: You must login first.
++Invalid input for operation. Please try again.
  
  Enter operation:
--bsuser01 successfully logged out.
-\ No newline at end of file
+ User03 successfully logged out.

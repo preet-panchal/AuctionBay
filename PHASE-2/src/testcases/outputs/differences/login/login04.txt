@@ -1,6 +1,6 @@
---- ./../testcases/outputs/expected/login/login04.txt	2023-02-03 02:23:55
-+++ ./../testcases/outputs/actual/login/login04.txt	2023-03-05 16:32:33
-@@ -12,12 +12,11 @@
+--- ./../testcases/outputs/expected/login/login04.txt	2023-03-06 13:20:22
++++ ./../testcases/outputs/actual/login/login04.txt	2023-03-06 15:53:07
+@@ -12,11 +12,11 @@
  - Logout (logout)
  
  Enter operation:
@@ -11,10 +11,7 @@
 +Error: This user does not exist in the user-accounts file.
  Enter operation:
 -Enter username: 
--Hello admin01 (AA)!
 +Enter username:
+ Hello User01 (AA)!
  
-+Error: This user does not exist in the user-accounts file.
  Enter operation:
--admin01 successfully logged out.
-\ No newline at end of file

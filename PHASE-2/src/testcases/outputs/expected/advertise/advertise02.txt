@@ -13,7 +13,7 @@ Here is a list of operations (what to input):
 
 Enter operation:
 Enter username:
-Hello admin01 (AA)!:
+Hello User01 (AA)!:
 
 Enter operation:
 Enter the item name:
@@ -22,4 +22,4 @@ Enter auction duration (in days):
 item01 successfully put up for auction for 80 days.
 
 Enter operation:
-admin01 successfully logged out.
+User01 successfully logged out.

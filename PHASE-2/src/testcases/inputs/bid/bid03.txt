@@ -1,6 +1,6 @@
 login
-admin01
+User01
 bid
-Item01
+item01
 user00
 logout

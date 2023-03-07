@@ -14,6 +14,7 @@ std::string User::toString(){
 	return userInfo;
 }
 
+// creates a user account, and checks thersholds
 USER_RECORD User::CreateAccount() {
 	USER_RECORD newUser;		// Initialize new USER_RECORD for newly created user
 
@@ -40,6 +41,7 @@ USER_RECORD User::CreateAccount() {
 	return newUser;
 }
 
+// delete to users account
 std::string User::DeleteAccount() {
 	std::string username;
 	std::printf("Enter a username to delete:\n");
@@ -48,24 +50,11 @@ std::string User::DeleteAccount() {
 	return username;
 }
 
+// advertise items and checks thersholds
 ITEM_RECORD User::Advertise() {
 	ITEM_RECORD itemRecord;		// Initialize new ITEM_RECORD for newly created item
 	std::string minBid;
 	std::string duration;
-
-/*
-	// User input for item name for advertise operation
-	std::printf("Enter the item name: ");
-	std::cin >> itemRecord.itemName;  
-	// Checking if item name is valid
-	if (itemRecord.itemName.length() > 25 || itemRecord.itemName.length() < 1) {
-		itemRecord.duration = 999;
-		std::printf("Error: Item name must be between 1-25 characters in length.\n");
-		return itemRecord;
-	}
-
-	std::cin.clear();
-*/
 
 	// User input for minimum bid for advertise operation
 	std::printf("Enter the minimum bid ($):\n");
@@ -106,15 +95,7 @@ ITEM_RECORD User::Advertise() {
 	return itemRecord;
 }
 
-/*
-ITEM_RECORD User::Bid(std::string itemName, std::string seller) {
-	ITEM_RECORD itemRecord;
-	itemRecord.itemName = itemName;
-	itemRecord.seller = seller;
-	return itemRecord;
-}
-*/
-
+// refund to users account, and checks thersholds
 REFUND_RECORD User::Refund() {
 	REFUND_RECORD refundRecord; // Initialize new REFUND_RECORD
 
@@ -141,49 +122,17 @@ REFUND_RECORD User::Refund() {
 	return refundRecord;
 }
 
-// TO-DO: addcredit does not function as intended
+// addcredit to users account, and checks thersholds
 float User::AddCredit(float amount) {
 	if ((this->credit + amount) < MAX_CREDIT) {
 		this->credit += amount;
-		// std::cout << "\nSuccessfully added $ " << amount << std::endl;
-		// std::cout << "\nCredit is now: " << credit << std::endl;
 	} else {
 		std::printf("Error: Exceeded $%i credit limit for this user.\n", MAX_CREDIT); 
 	}
 	return this->credit;
-	/*
-	std::string amount;	
-	std::cout << "Enter the credit amount to add: ";
-	std::cin >> amount;
-
-	std::stringstream sstr(amount);
-	float f;
-	if (sstr >> f) {
-		float famount = std::stof(amount);
-		if (typeid(famount) == typeid(float)) {
-			if (famount < MAX_CREDIT_ADD) {
-				// TO-DO: fix conditions
-				if ((credit+famount) < MAX_CREDIT) {
-					credit += famount;
-					// std::cout << "\nSuccessfully added $ " << amount << std::endl;
-					// std::cout << "\nCredit is now: " << credit << std::endl;
-					std::cout << "New credit balance: $" << credit << std::endl; 
-				} else {
-					std::printf("Error - exceeded $%i credit limit.\n", MAX_CREDIT); 
-				}
-			} else { // TO-DO: fix error
-				// std::printf("\nError - exceeded $%i session limit.", MAX_CREDIT_ADD);
-				std::printf("Error: Invalid input for credit. Enter a number between 1-1000.\n");
-			}
-		}
-	} else { 
-		std::printf("Error - amount must be a number.\n"); // TO-DO: fix error
-	}
-
-	return credit;
-	*/
 }
 
+// resests password and checks thersholds
 std::string User::ResetPassword() {
 	std:string password;
 	std::printf("Enter a password:\n");
@@ -211,6 +160,7 @@ bool User::is_number(const std::string& s) {
     return !s.empty() && it == s.end();
 }
 
+// Validate if input is a float type
 bool User::isFloat(const std::string& s) {
     std::istringstream iss(s);
     float f;

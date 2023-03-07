@@ -1,9 +1,11 @@
 login
-admin01
+User01
 advertise
 item01
 25
 100
 advertise
 item01
+26
+100
 logout

@@ -27,6 +27,3 @@ Enter operation:
 Error: You must login first.
 
 Enter operation:
-Error: You must login first.
-
-Enter operation:

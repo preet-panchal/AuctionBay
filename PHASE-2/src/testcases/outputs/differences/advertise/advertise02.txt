@@ -1,28 +1,11 @@
---- ./../testcases/outputs/expected/advertise/advertise02.txt	2023-02-03 01:36:52
-+++ ./../testcases/outputs/actual/advertise/advertise02.txt	2023-03-05 16:32:33
-@@ -13,13 +13,18 @@
+--- ./../testcases/outputs/expected/advertise/advertise02.txt	2023-03-06 14:35:58
++++ ./../testcases/outputs/actual/advertise/advertise02.txt	2023-03-06 15:53:07
+@@ -13,7 +13,7 @@
  
  Enter operation:
  Enter username:
--Hello admin01 (AA)!:
- 
-+Error: This user does not exist in the user-accounts file.
- Enter operation:
--Enter the item name:
--Enter the minimum bid ($):
--Enter auction duration (in days):
--item01 successfully put up for auction for 80 days.
-+Error: You must login first.
+-Hello User01 (AA)!:
++Hello User01 (AA)!
  
  Enter operation:
--admin01 successfully logged out.
-\ No newline at end of file
-+Error: You must login first.
-+
-+Enter operation:
-+Error: You must login first.
-+
-+Enter operation:
-+Error: You must login first.
-+
-+Enter operation:
+ Enter the item name:

@@ -1,7 +1,0 @@
-login
-admin01
-advertise
-item01
-25
-101
-logout

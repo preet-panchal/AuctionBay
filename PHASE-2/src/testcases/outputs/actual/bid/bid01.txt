@@ -13,9 +13,10 @@ Here is a list of operations (what to input):
 
 Enter operation:
 Enter username:
-
-Error: This user does not exist in the user-accounts file.
-Enter operation:
-Error: You must login first.
+Hello User04 (SS)!
 
 Enter operation:
+Error: Only AA, FS, or BS have privileges for this operation.
+
+Enter operation:
+User04 successfully logged out.

@@ -1,0 +1,144 @@
+01 newuser03 BS 0
+01 newuser06 AA 0
+01 newuser06 AA 0
+01 newuser06 AA 0
+01 newuser06 AA 0
+01 newuser06 AA 0
+01 newuser06 AA 0
+01 newuser06 AA 0
+01 newuser06 AA 0
+03 item01 User01 80 0
+03 item01 User01 80 0
+03 item01 User01 80 0
+01 newuser06 AA 0
+01 newuser06 AA 0
+01 newuser06 AA 0
+01 newuser06 AA 0
+01 newuser06 AA 0
+03 item01 User01 80 80
+03 item01 User01 100 25
+03 item01 User01 100 25
+03 item01 User01 80 80
+03 item01 User01 100 25
+03 item01 User01 100 25
+03 item01 User01 80 80
+03 item01 User01 100 25
+03 item01 User01 100 25
+03 item01 User01 100 26
+01 newuser06 AA 0
+03 item01 User01 80 80
+03 item01 User01 100 25
+03 item01 User01 100 25
+03 item01 User01 100 26
+03 item01 User01 80 80
+03 item01 User01 100 25
+03 item01 User01 100 25
+03 item01 User01 100 26
+01 newuser06 AA 0
+03 item01 User01 80 80
+03 item01 User01 100 25
+03 item01 User01 100 25
+03 item01 User01 100 26
+01 newuser06 AA 0
+03 item01 User01 80 80
+03 item01 User01 100 25
+03 item01 User01 100 25
+03 item01 User01 100 26
+01 newuser06 AA 0
+03 item01 User01 80 80
+03 item01 User01 100 25
+03 item01 User01 100 25
+03 item01 User01 100 26
+01 newuser06 AA 0
+03 item01 User01 80 80
+03 item01 User01 100 25
+03 item01 User01 100 25
+03 item01 User01 100 26
+01 newuser06 AA 0
+03 item01 User01 80 80
+03 item01 User01 100 25
+03 item01 User01 100 25
+03 item01 User01 100 26
+01 newuser06 AA 0
+03 item01 User01 80 80
+03 item01 User01 100 25
+03 item01 User01 100 25
+03 item01 User01 100 26
+01 newuser06 AA 0
+03 item01 User01 80 80
+03 item01 User01 100 25
+03 item01 User01 100 25
+03 item01 User01 100 26
+01 newuser06 AA 0
+03 item01 User01 80 80
+03 item01 User01 100 25
+03 item01 User01 100 25
+03 item01 User01 100 26
+01 newuser06 AA 0
+03 item01 User01 80 80
+03 item01 User01 100 25
+03 item01 User01 100 25
+03 item01 User01 100 26
+01 newuser06 AA 0
+03 item01 User01 80 80
+03 item01 User01 100 25
+03 item01 User01 100 25
+03 item01 User01 100 26
+01 newuser06 AA 0
+03 item01 User01 80 80
+03 item01 User01 100 25
+03 item01 User01 100 25
+03 item01 User01 100 26
+01 newuser06 AA 0
+03 item01 User01 80 80
+03 item01 User01 100 25
+03 item01 User01 100 25
+03 item01 User01 100 26
+01 newuser06 AA 0
+03 item01 User01 80 80
+03 item01 User01 100 25
+03 item01 User01 100 25
+03 item01 User01 100 26
+01 newuser06 AA 0
+03 item01 User01 80 80
+03 item01 User01 100 25
+03 item01 User01 100 25
+03 item01 User01 100 26
+01 newuser06 AA 0
+03 item01 User01 80 80
+03 item01 User01 100 25
+03 item01 User01 100 25
+03 item01 User01 100 26
+01 newuser06 AA 0
+03 item01 User01 80 80
+03 item01 User01 100 25
+03 item01 User01 100 25
+03 item01 User01 100 26
+01 newuser06 AA 0
+03 item01 User01 80 80
+03 item01 User01 100 25
+03 item01 User01 100 25
+03 item01 User01 100 26
+01 newuser06 AA 0
+03 item01 User01 80 80
+03 item01 User01 100 25
+03 item01 User01 100 25
+03 item01 User01 100 26
+01 newuser06 AA 0
+03 item03 User01 30 30
+03 item01 User01 80 80
+03 item01 User01 100 25
+03 item01 User01 100 25
+03 item01 User01 100 26
+01 newuser06 AA 0
+03 item03 User01 30 30
+05 User01 User02 25
+05 User01 User02 999999
+03 item01 User01 80 80
+03 item01 User01 100 25
+03 item01 User01 100 25
+03 item01 User01 100 26
+01 newuser06 AA 0
+03 item03 User01 30 30
+05 User01 User02 25
+05 User01 User02 999999

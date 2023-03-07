@@ -16,8 +16,6 @@ bool AuctionSystem::Login(USER_RECORD userRecord, User &currentUser) {
 	std::cin >> password;
 	std::cin.ignore();
 
-	//std::string temp1 = Encrypt(password);
-	//std::string temp2 = Decrypt(temp1);
 	if (password == Decrypt(userRecord.password)) {
 		loggedIn = true; // Login method called once user logins in
 
@@ -41,6 +39,7 @@ void AuctionSystem::Logout(User &currentUser) {
 	loggedIn = false;		// Reset loggedIn status once user logsout
 }
 
+// Encrypt users password to hash using Ceasar Cipher
 std::string Encrypt(std::string password) {
 	char ch;
 	int i;
@@ -64,6 +63,7 @@ std::string Encrypt(std::string password) {
 	return password;
 }
 
+// Decrypt users password to validate user
 std::string Decrypt(std::string password) {
 	char ch;
 	int i;

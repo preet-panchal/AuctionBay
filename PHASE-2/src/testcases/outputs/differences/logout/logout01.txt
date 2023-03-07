@@ -1,5 +1,5 @@
---- ./../testcases/outputs/expected/logout/logout01.txt	2023-02-02 21:51:25
-+++ ./../testcases/outputs/actual/logout/logout01.txt	2023-03-05 16:32:33
+--- ./../testcases/outputs/expected/logout/logout01.txt	2023-03-06 13:28:30
++++ ./../testcases/outputs/actual/logout/logout01.txt	2023-03-06 15:53:07
 @@ -12,11 +12,3 @@
  - Logout (logout)
  
@@ -8,8 +8,7 @@
 -
 -Enter operation:
 -Enter username:
--Hello admin01 (AA)!
+-Hello User01 (AA)!
 -
 -Enter operation:
--admin01 successfully logged out.
-\ No newline at end of file
+-User01 successfully logged out.

@@ -1,7 +1,0 @@
-login
-admin01 
-addcredit
-10000
-admin01
-10
-logout

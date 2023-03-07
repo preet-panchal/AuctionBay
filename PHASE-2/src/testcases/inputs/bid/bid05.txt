@@ -1,11 +1,7 @@
 login
-admin01
+User01
 bid
 item01
 user01
 200
-bid
-item01
-user01
-300
 logout

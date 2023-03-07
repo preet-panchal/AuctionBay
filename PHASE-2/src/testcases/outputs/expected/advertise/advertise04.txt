@@ -13,12 +13,12 @@ Here is a list of operations (what to input):
 
 Enter operation:
 Enter username:
-Hello admin01 (AA)!:
+Hello User01 (AA)!
 
 Enter operation:
 Enter the item name:
 Enter the minimum bid ($):
-Error: Enter minimum bid amount less than $1000.00.
+Error: Minimum bid amount must be betwceen 0-999.99.
 
 Enter operation:
-admin01 successfully logged out.
+User01 successfully logged out.

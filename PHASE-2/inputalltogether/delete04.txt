@@ -1,5 +1,0 @@
-login
-admin01
-delete
-newuser06
-logout

@@ -1,4 +1,5 @@
-User01 AA 0
-User02 FS 0
+User01 AA 1.00002e+06
+User02 FS -1.00002e+06
 User03 BS 0
 User04 SS 0
+newuser06 AA 0

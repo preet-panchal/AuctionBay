@@ -13,13 +13,13 @@ Here is a list of operations (what to input):
 
 Enter operation:
 Enter username:
-Hello admin01 (AA)!:
+Hello User01 (AA)!
 
 Enter operation:
 Enter the item name:
 Enter the minimum bid ($):
 Enter auction duration (in days):
-Error: Auction duration cannot be longer than 100 days.
+Error: Auction duration must be between 1-100 days.
 
 Enter operation:
-admin01 successfully logged out.
+User01 successfully logged out.

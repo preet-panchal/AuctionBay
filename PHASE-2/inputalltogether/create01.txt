@@ -1,4 +1,0 @@
-login
-fsuser01
-create
-logout

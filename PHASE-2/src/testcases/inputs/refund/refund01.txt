@@ -1,4 +1,4 @@
 login
-fsuser01
+User02
 refund
 logout

@@ -17,7 +17,7 @@ Error: This user does not exist in the user-accounts file.
 
 Enter operation:
 Enter username: 
-Hello admin01 (AA)!
+Hello User01 (AA)!
 
 Enter operation:
-admin01 successfully logged out.
+User01 successfully logged out.

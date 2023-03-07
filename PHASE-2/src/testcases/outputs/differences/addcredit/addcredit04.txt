@@ -1,5 +1,5 @@
 --- ./../testcases/outputs/expected/addcredit/addcredit04.txt	2023-02-03 00:25:47
-+++ ./../testcases/outputs/actual/addcredit/addcredit04.txt	2023-03-05 16:32:32
++++ ./../testcases/outputs/actual/addcredit/addcredit04.txt	2023-03-06 15:53:07
 @@ -1,24 +1,26 @@
 -Welcome to AuctionBay!
 ---

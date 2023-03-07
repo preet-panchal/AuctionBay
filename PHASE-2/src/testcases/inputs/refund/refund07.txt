@@ -1,7 +1,0 @@
-login
-admin01
-refund
-bsuser01
-ssuser01
-5
-logout

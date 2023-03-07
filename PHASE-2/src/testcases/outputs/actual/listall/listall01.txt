@@ -13,9 +13,14 @@ Here is a list of operations (what to input):
 
 Enter operation:
 Enter username:
-
-Error: This user does not exist in the user-accounts file.
-Enter operation:
-Error: You must login first.
+Hello User01 (AA)!
 
 Enter operation:
+Item Name: 	 Item Seller: 	 Current Bid: 	 Auction Days Left:
+item01 	 User01 	 80.00 	 80
+item01 	 User01 	 25.00 	 100
+item01 	 User01 	 25.00 	 100
+item01 	 User01 	 26.00 	 100
+
+Enter operation:
+User01 successfully logged out.

@@ -12,13 +12,14 @@ Here is a list of operations (what to input):
 - Logout (logout)
 
 Enter operation:
-Enter username: 
-Hello admin01 (AA)!
+Enter username:
+Hello User01 (AA)!
 
 Enter operation:
-Enter username to create:
-Enter user type:
+Enter a username to create:
+Enter an user type:
 Error: Invalid user type. (Must be: AA, FS, BS or SS)
 
+
 Enter operation:
-admin01 successfully logged out.
+User01 successfully logged out.

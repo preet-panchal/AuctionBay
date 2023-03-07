@@ -17,6 +17,7 @@ Enter username:
 Error: This user does not exist in the user-accounts file.
 Enter operation:
 Enter username:
+Hello User01 (AA)!
 
-Error: This user does not exist in the user-accounts file.
 Enter operation:
+User01 successfully logged out.

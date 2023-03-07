@@ -1,7 +1,6 @@
 login
-admin01 
+User01 
 addcredit
-bow
-10
-newuser01
+User01
+ten
 logout

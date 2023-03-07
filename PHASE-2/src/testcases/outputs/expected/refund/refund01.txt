@@ -13,10 +13,10 @@ Here is a list of operations (what to input):
 
 Enter operation:
 Enter username:
-Hello fsuser01 (FS)!
+Hello User02 (FS)!
 
 Enter operation:
 Error: Only admin has privilages for this operation.
 
 Enter operation:
-fsuser01 successfully logged out.
+User02 successfully logged out.

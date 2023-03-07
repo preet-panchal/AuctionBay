@@ -7,3 +7,4 @@
 03 itermsf User01 200 10002
 03 item1213 User01 99 99
 00 User01 AA 2000
+03  User01 80 80

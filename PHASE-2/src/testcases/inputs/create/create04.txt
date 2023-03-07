@@ -1,7 +1,6 @@
 login
-admin01
+User01
 create
-newuser03
-BS
-ten
+User01
+AA
 logout

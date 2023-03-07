@@ -13,13 +13,13 @@ Here is a list of operations (what to input):
 
 Enter operation:
 Enter username:
-Hello admin (AA)!
+Hello User01 (AA)!
 
 Enter operation:
 Enter buyer's username:
 Enter seller's username:
-Enter amount to refund:
-Error: Invalid input for refund amount.
+Enter refund amount:
+Error - amount must be a number.
 
 Enter operation:
-admin01 successfully logged out.
+User01 successfully logged out.

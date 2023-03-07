@@ -13,18 +13,13 @@ Here is a list of operations (what to input):
 
 Enter operation:
 Enter username:
-
-Error: This user does not exist in the user-accounts file.
-Enter operation:
-Error: You must login first.
+Hello User01 (AA)!
 
 Enter operation:
-Error: You must login first.
+Enter buyer's username:
+Enter seller's username:
+Enter refund amount:
 
+$999999.000000 refunded from User02 to User01
 Enter operation:
-Error: You must login first.
-
-Enter operation:
-Error: You must login first.
-
-Enter operation:
+User01 successfully logged out.
