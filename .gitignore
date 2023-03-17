@@ -13,3 +13,4 @@ PHASE-3/src/FileController.o
 *.exe
 PHASE-2/src/auction_system
 PHASE-3/src/auction_system
+PHASE-4/.DS_Store
