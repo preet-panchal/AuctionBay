@@ -1,5 +1,0 @@
-user01 AA 150 teww
-user02 FS 50 teww
-user03 BS 90 teww
-user04 SS 175 tewwjsyv
-user05 AA 0 tewwjmzi
