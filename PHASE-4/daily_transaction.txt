@@ -1,0 +1,11 @@
+01 user05 AA 0 tewwjmzi
+01 user06 FS 0 tewwwmb
+02 user06 FS 0 tewwwmb
+03 headphones user01 NA 45 65
+03 lotion user01 NA 14 34
+03 notebook user01 NA 5 5
+03 watch user01 NA 100 120
+05 user01 user02 50
+04 notebook user01 user03 5 10
+06 user04 SS 175 teww
+07 user04 SS 175 tewwjsyv
