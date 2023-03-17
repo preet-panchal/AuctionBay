@@ -1,4 +1,0 @@
-vicks                     user01          user03          009 010.00
-fan                       user01          N/A             074 075.00
-lotion                    user01          user03          004 005.00
-lamp                      user02          N/A             049 050.00
