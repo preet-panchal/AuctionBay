@@ -12,6 +12,7 @@ import java.io.*;
 
 public class Main {
     public static void main(String[] args) throws IOException {
+        // ** TO-DO: File IO needs to be changed to commandline for seamless program run *
         String mergedTransFile = "daily_transaction.txt";
         String oldUserAccFile = "current_users_accounts.txt";
         String oldAvailItemsFile = "available_items.txt";
@@ -74,8 +75,9 @@ public class Main {
 
         // subtract teh duration of each itme by one after each run
         auction.endDay(userManager);
-        // wrirte to new accounts file and available items file
+        // write to new accounts file and available items file
+        // * TO-DO: change file names *
         auction.write("new_available_items.txt");
-        userManager.write("new_current_user_accounts.txt");
+        userManager.write("new_current_users_accounts.txt");
 	}
 }
