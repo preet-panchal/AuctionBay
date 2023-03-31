@@ -1,5 +1,5 @@
-// File input (AuctionBay/PHASE-4/Backend/): daily_transaction.txt, available_items.txt, current_user_accounts.txt
-// File output (AuctionBay/PHASE-4/): new_available_items.txt, new_current_user_accounts.txt
+// File input (AuctionBay/PHASE-5/Backend/iofiles): daily_transaction.txt, available_items.txt, current_user_accounts.txt
+// File output (AuctionBay/PHASE-5/Backend/iofiles/new): new_available_items.txt, new_current_users_accounts.txt
 
 package main;
 
@@ -67,11 +67,9 @@ public class User {
 	// Creates a string in the correct format for the active user file.
 	public String formatOutput() {
 		String output;
-		// a string in the format 'UUUUUUUUUUUUUUU TT CCCCCCCCC'
-		// where UUUUUUUUUUU is the username, TT is acountType, and CCCCCCCCC is creditAmount		
-
-		// * TO-DO: Fix format to write to new_current_user_accounts.txt file according to documentation
-		output = String.format("%1$" + -15 + "s", username) + " " + accountType + " " + String.format("%09.2f", creditAmount);
+		// write to the current_users_accounts file in the required format
+		output = username + " " + accountType + " " + String.format("%.2f", creditAmount) + " " + password;
+		System.out.println(output);
 		return output;
 	}
 }

@@ -6,6 +6,6 @@
 03 notebook user01 NA 5 5
 03 watch user01 NA 100 120
 05 user01 user02 50
-04 notebook user01 user03 5 10
+04 notebook user01 user03 10
 06 user04 SS 175 teww
 07 user04 SS 175 tewwjsyv

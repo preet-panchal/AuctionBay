@@ -1,9 +1,10 @@
-// File input (AuctionBay/PHASE-4/Backend/): daily_transaction.txt, available_items.txt, current_user_accounts.txt
-// File output (AuctionBay/PHASE-4/): new_available_items.txt, new_current_user_accounts.txt
+// File input (AuctionBay/PHASE-5/Backend/iofiles): daily_transaction.txt, available_items.txt, current_user_accounts.txt
+// File output (AuctionBay/PHASE-5/Backend/iofiles/new): new_available_items.txt, new_current_users_accounts.txt
 
 package main;
 
-import java.io.*; 
+import java.io.*;
+import java.util.Objects;
 import java.util.Vector;
 
 // UserManager Class -- handles each user operations line-by-line
@@ -14,6 +15,10 @@ public class UserManager {
 	public UserManager() {
 		users = new Vector<User>();
 	}
+
+    public Vector<User> getUsers() {
+        return this.users;
+    }
 	
 	// validate if string read is a double (for credit values)
 	public double validateDouble(String doubleStr) {
@@ -27,14 +32,15 @@ public class UserManager {
 	}
 
     // displays all users to console as a message
-    public void displayUsers() {
+    public Vector<User> displayUsers() {
         // * TO-DO: Fix console message. *
-        System.out.println("Printing all Users");
+        System.out.println("-- Displaying all active Users --");
         int i = 0;
         while( i < users.size()) {
             users.get(i).formatOutput();
             i++;
         }
+        return this.users;
     }
 	
 	// loads the user objects from the file into the vector
@@ -45,6 +51,8 @@ public class UserManager {
         String accountTypeIn;
         double creditAmountIn;
         String password;
+
+        System.out.println("-- Reading from current_users_accounts.txt (from Frontend) --");
 
         try {
             BufferedReader bufferreader = new BufferedReader(new FileReader(filename));
@@ -80,14 +88,19 @@ public class UserManager {
         Double credit = validateDouble(splitStr[3]);
         String password = splitStr[4];
 
-        // * TO-DO: Check if new user created has a username that is different from all existing users. *
-
+        // Check if new user created has a username that is different from all existing users.
+        for (User user : users) {
+            if (Objects.equals(user.getUsername(), username)) {
+                System.out.println("ERROR: New user created must have a different username from all existing users.\n" +
+                        "--- For Transaction: " + transaction.toString());
+                return;
+            }
+        }
         User createdUser = new User(username, accountType, credit, password);
         users.add(createdUser);
         // * TO-DO: Fix console message. *
-		System.out.println("User " + username + " has been created.");
-
-	}
+		System.out.println("-- User " + username + " has been created.");
+    }
 	
 	// finds and removes a User from the vector
 	public Auction deleteUser(String transaction, Auction auction) throws IOException {
@@ -100,7 +113,7 @@ public class UserManager {
             if (users.get(i).getUsername().equals(username)) {
                 users.remove(i);
                 // * TO-DO: Fix console message. *
-                System.out.println("User " + username + " has been deleted.");
+                System.out.println("-- User " + username + " has been deleted.");
                 break;
             }
         }
@@ -118,20 +131,20 @@ public class UserManager {
         String buyerName = splitStr[1];
         String sellerName = splitStr[2];
         Double credit = validateDouble(splitStr[3]);
-        
-        // * TO-DO: Fix console message. *
-        System.out.println("refund amount " + credit);
+
+
         for (int i = 0; i < users.size(); i++) {
-            // buyer
+            // validating buyer credit balance
             if (users.get(i).getUsername().equals(buyerName)) {
                 users.get(i).updateCreditAmount(credit);
-            } // seller
+            } // validating seller credit balance
             else if (users.get(i).getUsername().equals(sellerName)) {
                 users.get(i).updateCreditAmount(-credit);    
             }
         }
 
-        System.out.println("Refund transaction completed");
+        System.out.println("-- Refund transaction completed --");
+        System.out.println(sellerName + " refunded " + credit + " to " + buyerName + ".");
 	}
 	
 	// finds a user and updates their credit amount
@@ -145,8 +158,9 @@ public class UserManager {
         for (int i = 0; i < users.size(); i++) {
             if (users.get(i).getUsername().equals(username)) {
                 users.get(i).updateCreditAmount(credit);
-                // * TO-DO: Fix console message. *
-                System.out.println(credit+" has been added to " + username);
+
+                System.out.println("-- Addcredit transaction completed --");
+                System.out.println(credit + " has been added to " + username + " balance.");
                 break;
             }
         }
@@ -161,8 +175,9 @@ public class UserManager {
         for (int i = 0; i < users.size(); i++) {
             if (users.get(i).getUsername().equals(username)) {
                 users.get(i).setPassword(password);
-                // * TO-DO: Fix console message. *
-                System.out.println(username + " has reset password " + password);
+
+                System.out.println("-- Reset Password transaction completed --");
+                System.out.println(username + " password has been reset.");
                 break;
             }
         }
@@ -172,22 +187,22 @@ public class UserManager {
 	public void closeAuction(String buyer, String seller, double amount) {
         // use findUser to locate the buyer and seller object then use the updateCredit method for each object to 
         // transfer the amount from the buyer to the seller
-        for (int i = 0; i < users.size(); i++) {
+        for (User user : users) {
             // add money to seller
-            if (users.get(i).getUsername().equals(seller)) {
-                    users.get(i).updateCreditAmount(amount);
+            if (user.getUsername().equals(seller)) {
+                user.updateCreditAmount(amount);
             }// subtract credit from buyer
-            else if (users.get(i).getUsername().equals(buyer)) {
-                    users.get(i).updateCreditAmount(amount*-1);
+            else if (user.getUsername().equals(buyer)) {
+                user.updateCreditAmount(amount * -1);
             }
         }
-        // * TO-DO: Fix console message. *
-        System.out.println("Auction closed");
+        System.out.println("-- Auction is now closed --");
 	}
 	
 	// writes the formated users to the output file
 	public void write(String filename) throws FileNotFoundException, IOException {
         // loops through the vector and writes the formatOutput string from each user object to the file
+        System.out.println("-- Updated user info written to new_current_users_accounts.txt --");
         PrintWriter writer = new PrintWriter(filename, "UTF-8");
         int i = 0;
         while( i < users.size()) {
@@ -195,9 +210,5 @@ public class UserManager {
                 i++;
         }
         writer.close();
-
-        // * TO-DO: Fix console message. *
-        System.out.println("All users have been written to file.");
     }
-	// add findUser method that search for a user with a specific username and returns its index 
 }

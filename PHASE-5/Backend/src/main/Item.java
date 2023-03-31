@@ -1,5 +1,5 @@
-// File input (AuctionBay/PHASE-4/Backend/): daily_transaction.txt, available_items.txt, current_user_accounts.txt
-// File output (AuctionBay/PHASE-4/): new_available_items.txt, new_current_user_accounts.txt
+// File input (AuctionBay/PHASE-5/Backend/iofiles): daily_transaction.txt, available_items.txt, current_user_accounts.txt
+// File output (AuctionBay/PHASE-5/Backend/iofiles/new): new_available_items.txt, new_current_users_accounts.txt
 
 package main;
 
@@ -63,12 +63,8 @@ public class Item {
 	// Creates a string in the correct format for the available items file.
 	public String formatOutput() {
 		String output;
-		// a string with the format 'IIIIIIIIIIIIIIIIIII SSSSSSSSSSSSSSS UUUUUUUUUUUUUU DDD PPPPPP'
-		// where IIIIIIIIIIIII is itemName, SSSSSSS is sellerName, UUUUU is buyerName, DDD is days remaining 
-		// and PPPPP is highestBid
-
-		// * TO-DO: Fix format to write to new_available_items.txt file according to documentation
-		output = String.format("%-25s", itemName) + " " + String.format("%-15s", sellerName) + " " + String.format("%-15s", buyerName) + " " + String.format("%03d", daysRemaining) +" " + String.format("%06.2f", highestBid);
+		// write to new available_items file in the required format
+		output = itemName + " " + sellerName + " " + buyerName + " " + String.format("%d", daysRemaining) + " " + String.format("%.2f", highestBid);
 		System.out.println(output);
 		return output;
 	}

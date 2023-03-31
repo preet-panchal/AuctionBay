@@ -1,0 +1,5 @@
+user01 AA 150.00 teww
+user02 FS 50.00 teww
+user03 BS 90.00 teww
+user04 SS 175.00 tewwjsyv
+user05 AA 0.00 tewwjmzi

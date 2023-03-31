@@ -1,4 +1,8 @@
-headphones                user01          N/A             044 065.00
-lotion                    user01          N/A             013 034.00
-notebook                  user01          user03          004 010.00
-watch                     user01          N/A             099 120.00
+headphones user01 N/A 44 65.00
+lotion user01 N/A 13 34.00
+notebook user01 user03 4 10.00
+watch user01 N/A 99 120.00
+headphones user01 N/A 44 65.00
+lotion user01 N/A 13 34.00
+notebook user01 N/A 4 5.00
+watch user01 N/A 99 120.00

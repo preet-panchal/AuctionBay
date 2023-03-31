@@ -1,18 +1,19 @@
-/* Program: AuctionBay
+/* Program: AuctionBay -- Phase 5
  * Authors: Rija Baig, Preet Panchal, Eihab Syed, Nathaniel Tai
  * Description: Auction-style Sales Service -- Backend Application.
 */
 
-// File input (AuctionBay/PHASE-4/Backend/): daily_transaction.txt, available_items.txt, current_user_accounts.txt
-// File output (AuctionBay/PHASE-4/): new_available_items.txt, new_current_user_accounts.txt
+// File input (AuctionBay/PHASE-5/Backend/iofiles): daily_transaction.txt, available_items.txt, current_user_accounts.txt
+// File output (AuctionBay/PHASE-5/Backend/iofiles/new): new_available_items.txt, new_current_user_accounts.txt
 
 package main;
 
-import java.io.*; 
+import java.io.*;
+import java.util.Objects;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        // ** TO-DO: File IO needs to be changed to commandline for seamless program run *
+        // Reading files in Backend folder from daily Frontend run
         String mergedTransFile = "Backend/iofiles/daily_transaction.txt";
         String oldUserAccFile = "Backend/iofiles/current_users_accounts.txt";
         String oldAvailItemsFile = "Backend/iofiles/available_items.txt";
@@ -39,30 +40,29 @@ public class Main {
             while (transaction != null) {     
                 String[] splitStr = transaction.split("\\s+");
                 System.out.println("tranaction: " + splitStr[0]);
-                if (splitStr[0] == "00") {
+                if (Objects.equals(splitStr[0], "00")) {
                     break;
-                } else if (splitStr[0] == "01") {
+                } else if (Objects.equals(splitStr[0], "01")) {
                     // create user
                     userManager.createUser(transaction);
-                } else if (splitStr[0] == "02") {
+                } else if (Objects.equals(splitStr[0], "02")) {
                     // delete user
                     userManager.deleteUser(transaction, auction);
-                } else if (splitStr[0] == "03") {
+                } else if (Objects.equals(splitStr[0], "03")) {
                     // advertise
                     auction.advertise(transaction);
-                } else if (splitStr[0] == "04") {
+                } else if (Objects.equals(splitStr[0], "04")) {
                     // bid
                     auction.bid(transaction);
-                } else if (splitStr[0] == "05") {
+                } else if (Objects.equals(splitStr[0], "05")) {
                     // refund
                     userManager.refund(transaction);
-                } else if (splitStr[0] == "06") {
+                } else if (Objects.equals(splitStr[0], "06")) {
                     // addcredit
                     userManager.addCredit(transaction);
-                } else if (splitStr[0] == "07") {
+                } else if (Objects.equals(splitStr[0], "07")) {
                     // need to create
                     userManager.resetPassword(transaction);
-                    System.out.println(transaction);
                 }
                 
                 transaction = bufferreader.readLine();
@@ -73,10 +73,9 @@ public class Main {
             ex.printStackTrace();
         }
 
-        // subtract teh duration of each itme by one after each run
+        // subtract the duration of each item by one after each run
         auction.endDay(userManager);
         // write to new accounts file and available items file
-        // * TO-DO: change file names *
         auction.write("Backend/iofiles/new/new_available_items.txt");
         userManager.write("Backend/iofiles/new/new_current_users_accounts.txt");
 	}
